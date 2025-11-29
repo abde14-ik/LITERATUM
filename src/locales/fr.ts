@@ -321,62 +321,72 @@ export const fr = {
             {
                 title: "The Art of Loving",
                 author: "Erich Fromm",
-                theme: "Connexion humaine",
+                image: "/library/the art of loving.jpg",
+                theme: "Discipline active",
+                synopsis:
+                    "Fromm soutient que l'amour n'est pas un vague sentiment, mais un art qui exige discipline, concentration et patience pour être maîtrisé.",
                 connection:
-                    "Comprendre la dimension humaine dans les systèmes distribués et la dynamique d'équipe.",
-                image: "/the art of loving.jpg",
+                    "Appliquer cette même discipline active et ce soin aux dynamiques d'équipe et à la responsabilité du code.",
             },
             {
                 title: "Man for Himself",
                 author: "Erich Fromm",
+                image: "/library/man for himself.jpg",
                 theme: "Éthique humaniste",
+                synopsis:
+                    "Une enquête sur la psychologie de l'éthique, défendant que notre plus grande vertu est d'être fidèles à notre propre nature (productivité).",
                 connection:
-                    "Ancrer les décisions d'automatisation et DevOps dans des principes éthiques centrés sur l'humain.",
-                image: "/man for himself.jpg",
+                    "Ancrer les décisions d'ingénierie dans l'intégrité plutôt que dans les seuls indicateurs.",
             },
             {
                 title: "The Art of Being",
                 author: "Erich Fromm",
+                image: "/library/the art of being.jpg",
                 theme: "Pleine conscience",
+                synopsis:
+                    "Un guide pour fonctionner pleinement dans un monde distrait grâce à la pratique de la pleine conscience et au dépassement des illusions.",
                 connection:
-                    "Apporter présence et focus à la gestion d'incidents, aux pratiques SRE et à la fiabilité long terme.",
-                image: "/the art of being.jpg",
+                    "Apporter un état de Flow et une concentration profonde à la conception d'architectures complexes et au débogage.",
             },
             {
                 title: "Ethics: A Very Short Introduction",
                 author: "Simon Blackburn",
-                theme: "Philosophie morale",
+                image: "/library/ethics.jpg",
+                theme: "Systèmes moraux",
+                synopsis:
+                    "Blackburn explore les grands climats éthiques de notre époque (Kant, utilitarisme) et la manière dont nous justifions nos valeurs.",
                 connection:
-                    "Appliquer la philosophie morale à l'IA, à la gouvernance cloud et aux compromis d'automatisation.",
-                image: "/ethics.jpg",
+                    "Utiliser ces cadres pour arbitrer les compromis éthiques en IA, vie privée et automatisation.",
             },
             {
                 title: "Philosophy: The Basics",
                 author: "Nigel Warburton",
-                theme: "Pensée critique",
+                image: "/library/philosophy.jpg",
+                theme: "Logique critique",
+                synopsis:
+                    "Une introduction claire aux grandes questions de la réalité, de la science et de l'esprit, invitant à un scepticisme rigoureux.",
                 connection:
-                    "Aiguiser le raisonnement pour les décisions d'architecture et le débogage de systèmes complexes.",
-                image: "/philosophy.jpg",
+                    "Aiguiser les capacités d'analyse de cause racine nécessaires pour diagnostiquer les pannes distribuées.",
             },
             {
                 title: "Le Mythe de la Normalité",
                 author: "Dr. Gabor Maté",
-                theme: "Santé Systémique",
+                image: "/library/normal.jpg",
+                theme: "Santé systémique",
                 synopsis:
-                    "Maté analyse les causes profondes de la maladie dans la société moderne, liant traumatisme individuel et pressions systémiques.",
+                    "Maté décortique la façon dont la société moderne génère la maladie, en reliant les traumatismes individuels aux pressions systémiques plus larges.",
                 connection:
-                    "Comprendre l'impact du stress systémique sur la fiabilité, que ce soit en biologie ou dans le Cloud.",
-                image: "/normal.jpg",
+                    "Comprendre comment le stress systémique affecte la fiabilité — autant dans la biologie humaine que dans les clusters cloud.",
             },
             {
                 title: "L'Homme Irrationnel",
                 author: "William Barrett",
+                image: "/library/irrational-man.jpg",
                 theme: "Existentialisme",
                 synopsis:
-                    "Une étude complète de la philosophie existentielle et de la quête de sens dans un monde purement mécaniste.",
+                    "Un exposé de référence sur la philosophie existentialiste, qui interroge la quête de sens à l'ère mécaniste.",
                 connection:
-                    "Naviguer dans l'ambiguïté des systèmes complexes où la logique seule ne suffit pas toujours.",
-                image: "/irrational-man.jpg",
+                    "Naviguer dans l'ambiguïté et le « facteur humain » au sein de systèmes logiciels déterministes.",
             },
         ],
     },

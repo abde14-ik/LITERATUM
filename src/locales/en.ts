@@ -314,77 +314,73 @@ export const en = {
     },
     library: {
         heading: "Intellectual Foundations",
-        tagline:
-            "Engineering is about building systems. Philosophy is about understanding who uses them.",
+        tagline: "Engineering builds systems. Philosophy helps us understand who uses them.",
         items: [
             {
                 title: "The Art of Loving",
                 author: "Erich Fromm",
+                image: "/library/the art of loving.jpg",
                 theme: "Active Discipline",
                 synopsis:
-                    "Fromm argues that love is not a vague feeling, but an art requiring discipline, concentration, and patience.",
-                connection: "Applying this same active discipline to team dynamics and code ownership.",
-                image: "/the art of loving.jpg",
+                    "Fromm argues that love is not a vague sentiment, but an art requiring discipline, concentration, and patience to master.",
+                connection: "Applying this same active discipline and care to team dynamics and code ownership.",
             },
             {
                 title: "Man for Himself",
                 author: "Erich Fromm",
+                image: "/library/man for himself.jpg",
                 theme: "Humanistic Ethics",
                 synopsis:
-                    "A study on how true virtue comes from being productive and authentic to one's own nature.",
-                connection:
-                    "Grounding engineering decisions in integrity rather than just following orders.",
-                image: "/man for himself.jpg",
+                    "An inquiry into the psychology of ethics, arguing that our highest virtue is to be true to our own nature (productivity).",
+                connection: "Grounding engineering decisions in integrity rather than just following metrics.",
             },
             {
                 title: "The Art of Being",
                 author: "Erich Fromm",
+                image: "/library/the art of being.jpg",
                 theme: "Mindfulness",
                 synopsis:
-                    "A guide to functioning fully in a distracted world through meditation and self-awareness.",
-                connection:
-                    "Maintaining deep focus (Flow State) during complex architecture design and debugging.",
-                image: "/the art of being.jpg",
+                    "A guide to functioning fully in a distracted world through the practice of mindfulness and overcoming illusions.",
+                connection: "Bringing deep focus (Flow State) to complex architecture design and debugging.",
             },
             {
                 title: "Ethics: A Very Short Introduction",
                 author: "Simon Blackburn",
+                image: "/library/ethics.jpg",
                 theme: "Moral Systems",
                 synopsis:
-                    "Blackburn explores the major ethical theories (Kant, Utilitarianism) that shape human judgment.",
-                connection:
-                    "Using these frameworks to navigate ethical trade-offs in AI and data privacy.",
-                image: "/ethics.jpg",
+                    "Blackburn explores the major ethical climates of our times (Kant, Utilitarianism) and how we justify our values.",
+                connection: "Using these frameworks to navigate ethical trade-offs in AI, privacy, and automation.",
             },
             {
                 title: "Philosophy: The Basics",
                 author: "Nigel Warburton",
+                image: "/library/philosophy.jpg",
                 theme: "Critical Logic",
                 synopsis:
-                    "An introduction to the foundational questions of reality, God, and science.",
+                    "A clear introduction to the big questions of reality, science, and the mind, encouraging rigorous skepticism.",
                 connection:
                     "Sharpening the root-cause analysis skills needed to diagnose distributed failures.",
-                image: "/philosophy.jpg",
             },
             {
                 title: "The Myth of Normal",
                 author: "Dr. Gabor Maté",
+                image: "/library/normal.jpg",
                 theme: "Systemic Health",
                 synopsis:
-                    "Maté dissects the underlying causes of illness in modern society, linking individual trauma to systemic pressures.",
+                    "Maté dissects how modern society generates illness, linking individual trauma to broader systemic pressures.",
                 connection:
-                    "Understanding how systemic stress affects reliability—whether in human biology or distributed cloud systems.",
-                image: "/normal.jpg",
+                    "Understanding how systemic stress impacts reliability—in both human biology and cloud clusters.",
             },
             {
                 title: "Irrational Man",
                 author: "William Barrett",
+                image: "/library/irrational-man.jpg",
                 theme: "Existentialism",
                 synopsis:
-                    "A comprehensive study of existential philosophy, exploring how we find meaning in a purely mechanistic, functional world.",
+                    "A definitive account of existential philosophy, exploring how we find meaning in a purely mechanistic age.",
                 connection:
-                    "Navigating the ambiguity of complex systems where pure logic doesn't always explain emergent behavior.",
-                image: "/irrational-man.jpg",
+                    "Navigating the ambiguity and 'human factor' within deterministic software systems.",
             },
         ],
     },
