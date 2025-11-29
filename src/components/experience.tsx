@@ -65,7 +65,7 @@ export function ExperienceSection() {
                                 </div>
 
                                 <ul className="mt-3 space-y-1.5 text-sm text-slate-300 sm:text-[0.94rem]">
-                                    {item.tasks.map((task) => (
+                                    {item.tasks.map((task: string) => (
                                         <li key={task} className="flex gap-2">
                                             <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-gold" />
                                             <span>{task}</span>
