@@ -282,6 +282,26 @@ export const en = {
                     "Sharpening the root-cause analysis skills needed to diagnose distributed failures.",
                 image: "/philosophy.jpg",
             },
+            {
+                title: "The Myth of Normal",
+                author: "Dr. Gabor Maté",
+                theme: "Systemic Health",
+                synopsis:
+                    "Maté dissects the underlying causes of illness in modern society, linking individual trauma to systemic pressures.",
+                connection:
+                    "Understanding how systemic stress affects reliability—whether in human biology or distributed cloud systems.",
+                image: "/normal.jpg",
+            },
+            {
+                title: "Irrational Man",
+                author: "William Barrett",
+                theme: "Existentialism",
+                synopsis:
+                    "A comprehensive study of existential philosophy, exploring how we find meaning in a purely mechanistic, functional world.",
+                connection:
+                    "Navigating the ambiguity of complex systems where pure logic doesn't always explain emergent behavior.",
+                image: "/irrational-man.jpg",
+            },
         ],
     },
     contact: {

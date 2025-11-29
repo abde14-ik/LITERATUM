@@ -335,6 +335,26 @@ export const fr = {
                     "Aiguiser le raisonnement pour les décisions d'architecture et le débogage de systèmes complexes.",
                 image: "/philosophy.jpg",
             },
+            {
+                title: "Le Mythe de la Normalité",
+                author: "Dr. Gabor Maté",
+                theme: "Santé Systémique",
+                synopsis:
+                    "Maté analyse les causes profondes de la maladie dans la société moderne, liant traumatisme individuel et pressions systémiques.",
+                connection:
+                    "Comprendre l'impact du stress systémique sur la fiabilité, que ce soit en biologie ou dans le Cloud.",
+                image: "/normal.jpg",
+            },
+            {
+                title: "L'Homme Irrationnel",
+                author: "William Barrett",
+                theme: "Existentialisme",
+                synopsis:
+                    "Une étude complète de la philosophie existentielle et de la quête de sens dans un monde purement mécaniste.",
+                connection:
+                    "Naviguer dans l'ambiguïté des systèmes complexes où la logique seule ne suffit pas toujours.",
+                image: "/irrational-man.jpg",
+            },
         ],
     },
     contact: {
