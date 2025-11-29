@@ -2,12 +2,11 @@
 
 import Giscus from "@giscus/react";
 import { useLanguage } from "@/context/language-context";
+import { GISCUS_CONFIG } from "@/lib/giscus-config";
 
 export function GuestbookSection() {
     const { content, language } = useLanguage();
-    const hasGiscusConfig =
-        process.env.NEXT_PUBLIC_GISCUS_REPO_ID &&
-        process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID;
+    const hasGiscusConfig = Boolean(GISCUS_CONFIG.repoId && GISCUS_CONFIG.categoryId);
 
     return (
         <section id="guestbook" className="scroll-mt-32">
@@ -23,17 +22,17 @@ export function GuestbookSection() {
             <div className="mt-4 rounded-2xl border border-slate-800/80 bg-slate-950/70 p-4 shadow-sm shadow-slate-950/40">
                 {hasGiscusConfig ? (
                     <Giscus
-                        repo="abde14-ik/portfolio"
-                        repoId={process.env.NEXT_PUBLIC_GISCUS_REPO_ID ?? ""}
-                        category="General"
-                        categoryId={process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID ?? ""}
+                        repo={GISCUS_CONFIG.repo}
+                        repoId={GISCUS_CONFIG.repoId}
+                        category={GISCUS_CONFIG.category}
+                        categoryId={GISCUS_CONFIG.categoryId}
                         mapping="pathname"
                         strict="0"
                         reactionsEnabled="1"
                         emitMetadata="0"
                         inputPosition="bottom"
                         theme="transparent_dark"
-                        lang={language}
+                        lang={language === "fr" ? "fr" : "en"}
                         loading="lazy"
                     />
                 ) : (
