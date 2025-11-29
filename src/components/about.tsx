@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { about, languages } from "@/constants/data";
-import { content } from "@/constants/content";
+import { useLanguage } from "@/context/language-context";
 // import { Gallery } from "@/components/gallery";
 
 const sectionVariants = {
@@ -11,6 +10,9 @@ const sectionVariants = {
 };
 
 export function AboutSection() {
+    const { content } = useLanguage();
+    const about = content.about as any;
+
     return (
         <motion.section
             id="about"
@@ -23,20 +25,20 @@ export function AboutSection() {
         >
             <header className="mb-12 space-y-3">
                 <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-slate-100">
-                    {content.about.heading}
+                    {about.heading}
                 </h2>
                 <p className="text-sm text-slate-400 sm:text-base">
-                    {content.about.subheading}
+                    {about.subheading}
                 </p>
             </header>
 
             <div className="grid gap-5 md:grid-cols-2 md:gap-6">
                 <div className="rounded-2xl border border-violet-500/20 bg-indigo-950/30 p-5 shadow-sm shadow-slate-950/40 backdrop-blur">
                     <h3 className="text-sm font-semibold text-slate-100 sm:text-base">
-                        {content.about.engineeringTitle}
+                        {about.engineeringTitle}
                     </h3>
                     <div className="mt-3 space-y-2 text-sm text-slate-300 sm:text-[0.94rem]">
-                        {about.technical.map((item) => (
+                        {about.profileItems.map((item: string) => (
                             <p key={item}>{item}</p>
                         ))}
                     </div>
@@ -44,10 +46,10 @@ export function AboutSection() {
 
                 <div className="rounded-2xl border border-slate-800/70 bg-slate-950/80 p-5 shadow-sm shadow-slate-950/40">
                     <h3 className="text-sm font-semibold text-slate-100 sm:text-base">
-                        {content.about.beyondCodeTitle}
+                        {about.beyondCodeTitle}
                     </h3>
                     <div className="mt-3 space-y-2 text-sm text-slate-300 sm:text-[0.94rem]">
-                        {about.beyondCode.map((item) => (
+                        {about.beyondItems.map((item: string) => (
                             <p key={item}>{item}</p>
                         ))}
                     </div>

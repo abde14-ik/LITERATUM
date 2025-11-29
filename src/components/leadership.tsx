@@ -1,11 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { volunteering } from "@/constants/data";
 import { Activity, Terminal, Sigma } from "lucide-react";
-import { content } from "@/constants/content";
 import Image from "next/image";
 import { prefix } from "@/lib/utils";
+import { useLanguage } from "@/context/language-context";
 
 const sectionVariants = {
     hidden: { opacity: 0, y: 24 },
@@ -13,6 +12,10 @@ const sectionVariants = {
 };
 
 export function LeadershipSection() {
+    const { content } = useLanguage();
+    const leadership = content.leadership as any;
+    const volunteering = (leadership.items as any[]) ?? [];
+
     return (
         <motion.section
             id="leadership"
@@ -25,10 +28,10 @@ export function LeadershipSection() {
         >
             <header className="mb-12 space-y-3">
                 <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-slate-100">
-                    {content.leadership.heading}
+                    {leadership.heading}
                 </h2>
                 <p className="text-sm text-slate-400 sm:text-base">
-                    {content.leadership.subheading}
+                    {leadership.subheading}
                 </p>
             </header>
 
@@ -36,10 +39,10 @@ export function LeadershipSection() {
                 <div className="flex items-center justify-between gap-3">
                     <div className="space-y-1">
                         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
-                            {content.leadership.humanSideLabel}
+                            {leadership.humanSideLabel}
                         </p>
                         <h3 className="text-sm font-semibold text-slate-50 sm:text-base">
-                            {content.leadership.humanSideTitle}
+                            {leadership.humanSideTitle}
                         </h3>
                     </div>
                     <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-amber-500/15 text-amber-300">

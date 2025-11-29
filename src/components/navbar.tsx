@@ -7,50 +7,54 @@ import { Activity, Github, Linkedin, Menu, X } from "lucide-react";
 import { Cairo } from "next/font/google";
 import { motion } from "framer-motion";
 import { profile } from "@/constants/data";
-import { content } from "@/constants/content";
 import { prefix } from "@/lib/utils";
 import { AvatarModal } from "@/components/avatar-modal";
 import { NavDropdown } from "@/components/nav-dropdown";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { useLanguage } from "@/context/language-context";
 
 const cairo = Cairo({
     subsets: ["arabic"],
     weight: ["700"],
 });
 
-const desktopLinks = [
-    { id: "about", label: "About" },
-    { id: "skills", label: "Skills" },
-    { id: "experience", label: "Experience" },
-    { id: "projects", label: "Projects" },
-];
-
-const communityLinks = [
-    { id: "leadership", label: "Leadership" },
-    { id: "bookshelf", label: "Bookshelf" },
-    { id: "languages", label: "Languages" },
-    { id: "community", label: "Endorsements" },
-    { id: "guestbook", label: "Guestbook" },
-];
-
-const mobileLinks = [
-    { id: "hero", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "education", label: "Education" },
-    { id: "skills", label: "Skills" },
-    { id: "experience", label: "Experience" },
-    { id: "projects", label: "Projects" },
-    { id: "leadership", label: "Leadership" },
-    { id: "bookshelf", label: "Bookshelf" },
-    { id: "languages", label: "Languages" },
-    { id: "community", label: "Endorsements" },
-    { id: "guestbook", label: "Guestbook" },
-    { id: "contact", label: "Contact" },
-];
-
 export function Navbar() {
     const [isAvatarOpen, setIsAvatarOpen] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const { content } = useLanguage();
+
+    const nav = content.nav;
+    const navbar = content.navbar ?? {};
+
+    const desktopLinks = (navbar.items as { id: string; label: string }[] | undefined) ?? [
+        { id: "about", label: nav.about },
+        { id: "skills", label: nav.skills },
+        { id: "experience", label: nav.experience },
+        { id: "projects", label: nav.projects },
+    ];
+
+    const communityLinks = [
+        { id: "leadership", label: navbar.leadership ?? nav.leadership },
+        { id: "bookshelf", label: navbar.bookshelf ?? "Bookshelf" },
+        { id: "languages", label: navbar.languages ?? "Languages" },
+        { id: "community", label: navbar.endorsements ?? "Endorsements" },
+        { id: "guestbook", label: navbar.guestbook ?? "Guestbook" },
+    ];
+
+    const mobileLinks = [
+        { id: "hero", label: nav.home },
+        { id: "about", label: nav.about },
+        { id: "education", label: nav.education },
+        { id: "skills", label: nav.skills },
+        { id: "experience", label: nav.experience },
+        { id: "projects", label: nav.projects },
+        { id: "leadership", label: navbar.leadership ?? nav.leadership },
+        { id: "bookshelf", label: navbar.bookshelf ?? "Bookshelf" },
+        { id: "languages", label: navbar.languages ?? "Languages" },
+        { id: "community", label: navbar.endorsements ?? "Endorsements" },
+        { id: "guestbook", label: navbar.guestbook ?? "Guestbook" },
+        { id: "contact", label: navbar.contact ?? nav.contact },
+    ];
 
     return (
         <>
@@ -151,7 +155,7 @@ export function Navbar() {
                             href="#contact"
                             className="rounded-full bg-zinc-100 px-3 py-1.5 text-sm font-medium text-black shadow-sm shadow-black/40 transition hover:bg-white"
                         >
-                            Contact
+                            {navbar.contact ?? nav.contact}
                         </Link>
                     </div>
                     <button

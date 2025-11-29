@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { experience } from "@/constants/data";
 import { Briefcase } from "lucide-react";
 import { useLanguage } from "@/context/language-context";
 
@@ -12,6 +11,7 @@ const sectionVariants = {
 
 export function ExperienceSection() {
     const { content } = useLanguage();
+    const items = (content.experience as any).items ?? [];
 
     return (
         <motion.section
@@ -35,7 +35,7 @@ export function ExperienceSection() {
             <div className="relative mt-2">
                 <div className="pointer-events-none absolute left-[0.4rem] top-0 bottom-0 hidden w-[2px] bg-zinc-800 sm:block" />
                 <ol className="space-y-6 pl-0 sm:pl-6">
-                    {experience.map((item, index) => (
+                    {items.map((item: any, index: number) => (
                         <motion.li
                             key={`${item.company}-${item.role}-${index}`}
                             initial={{ opacity: 0, x: 40 }}

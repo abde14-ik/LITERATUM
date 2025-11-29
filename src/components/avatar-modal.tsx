@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { Github, Linkedin, Mail, X } from "lucide-react";
 import { profile } from "@/constants/data";
-import { content } from "@/constants/content";
+import { useLanguage } from "@/context/language-context";
 
 type AvatarModalProps = {
     isOpen: boolean;
@@ -17,6 +17,7 @@ type AvatarModalProps = {
 
 export function AvatarModal({ isOpen, onClose, src, alt }: AvatarModalProps) {
     const [mounted, setMounted] = useState(false);
+    const { content } = useLanguage();
 
     useEffect(() => {
         setMounted(true);

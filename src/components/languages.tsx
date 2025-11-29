@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { languages } from "@/constants/data";
 import { useLanguage } from "@/context/language-context";
 
 const sectionVariants = {
@@ -11,6 +10,7 @@ const sectionVariants = {
 
 export function LanguagesSection() {
     const { content } = useLanguage();
+    const langs = (content.about as any).languagesList ?? [];
 
     return (
         <motion.section
@@ -33,7 +33,7 @@ export function LanguagesSection() {
 
             <div className="rounded-2xl border border-teal-500/40 bg-slate-950/80 p-4">
                 <div className="mt-1 flex flex-wrap gap-2">
-                    {languages.map((lang) => (
+                    {langs.map((lang: string) => (
                         <span
                             key={lang}
                             className="inline-flex items-center rounded-full border border-teal-500/40 bg-teal-500/10 px-3 py-1 text-xs font-medium text-teal-200"

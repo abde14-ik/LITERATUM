@@ -15,6 +15,14 @@ export const fr = {
         stravaAria: "Profil Strava",
     },
     navbar: {
+        items: [
+            { id: "hero", label: "Accueil" },
+            { id: "about", label: "À propos" },
+            { id: "skills", label: "Compétences" },
+            { id: "experience", label: "Expérience" },
+            { id: "projects", label: "Projets" },
+            { id: "community", label: "Communauté" },
+        ],
         about: "À Propos",
         skills: "Compétences",
         experience: "Expérience",
@@ -22,24 +30,29 @@ export const fr = {
         community: "Communauté",
         leadership: "Leadership",
         languages: "Langues",
+        bookshelf: "Bibliothèque",
         endorsements: "Recommandations",
         guestbook: "Livre d'Or",
+        contact: "Contactez-moi",
         subtitle: "Élève ingénieur à l'INPT spécialisé dans les systèmes distribués.",
     },
     common: {
-        present: "Aujourd'hui",
+        present: "Présent",
         viewCredential: "Voir le diplôme",
+        viewCode: "Voir le Code",
+        liveDemo: "Démo Live",
+        readMore: "Lire la suite",
     },
     hero: {
         avatar: "/ikbi.jpg",
         badge: "Élève ingénieur à l'INPT spécialisé dans les systèmes distribués.",
         bio: "Élève ingénieur à l'INPT spécialisé dans les systèmes distribués, les infrastructures Cloud-Native et l'automatisation CI/CD. Passionné par l'architecture de solutions résilientes et évolutives.",
-        statusDot: "À l'écoute d'opportunités PFE",
+        statusDot: "Ouvert aux opportunités PFE",
         location: "Basé au Maroc",
         remote: "Ouvert à l'International & Remote",
-        locationMeta: "Basé au Maroc • Ouvert aux opportunités PFE internationales et à distance",
-        metaLine: "Basé au Maroc • Ouvert aux opportunités PFE internationales et à distance",
-        ctaViewProjects: "Voir les projets",
+        locationMeta: "Basé au Maroc • Ouvert au Télétravail & International",
+        metaLine: "Basé au Maroc • Ouvert au Télétravail & International",
+        ctaViewProjects: "Voir les Projets",
         ctaDownloadResume: "Télécharger le CV",
         resumeUrl: "/resume-fr.pdf",
         openToOpportunities: "Ouvert aux opportunités internationales et au télétravail",
@@ -81,7 +94,7 @@ export const fr = {
         },
     },
     about: {
-        heading: "À Propos de Moi",
+        heading: "À Propos",
         subheading:
             "Un esprit d'ingénieur fondé sur l'automatisation et la fiabilité, avec un côté humain façonné par la course à pied, la communauté et la curiosité.",
         bio:
@@ -90,8 +103,8 @@ export const fr = {
         profileTitle: "Profil Ingénieur",
         profileItems: [
             "Élève ingénieur Cloud & DevOps à l'INPT spécialisé dans les systèmes ubiquitaires et distribués, le cloud et l'IoT.",
-            "Passionné par l'automatisation, l'Infrastructure as Code et la construction de plateformes cloud-native fiables.",
-            "Pratique sur VMware, Azure, AWS, Kubernetes, pipelines CI/CD et outils d'observabilité.",
+            "Passionné par l'automatisation, l'Infrastructure as Code (IaC) et la construction de plateformes cloud-native fiables.",
+            "Pratique concrète sur VMware, Azure, AWS, Kubernetes, pipelines CI/CD et outils d'observabilité.",
         ],
         beyondCodeTitle: "Au-delà du Code",
         beyondTitle: "Au-delà du Code",
@@ -102,6 +115,7 @@ export const fr = {
         ],
         languagesTitle: "Langues",
         languagesSubtitle: "Communication multilingue",
+        languagesList: ["Anglais", "Français", "Arabe", "Tamazight"],
     },
     skills: {
         heading: "Matrice de compétences",
@@ -191,19 +205,25 @@ export const fr = {
         heading: "Expérience",
         subheading:
             "Des rôles concrets appliquant cloud, automatisation et données dans des environnements réels.",
-        jobs: [
+        items: [
             {
                 role: "Stagiaire Infrastructure Cloud",
                 company: "MAROC DATACENTER (MDC)",
+                period: "06/2025 - 08/2025",
                 location: "Témara, Maroc",
-                description:
-                    "Conception d'un cloud privé automatisé sur VMware vSphere. Mise en place de TrueNAS, automatisation Ansible, sécurité Wazuh et sauvegarde Veeam.",
+                tasks: [
+                    "Conception d'un cloud privé automatisé sur VMware vSphere.",
+                    "Mise en place de TrueNAS, automatisation Ansible, sécurité Wazuh et sauvegarde Veeam.",
+                ],
             },
             {
                 role: "Collecteur de Données",
                 company: "Haut Commissariat au Plan du Maroc",
-                description:
-                    "Collecte de données pour la campagne d'été du HCP. Développement de la résilience et du souci du détail lors des opérations sur le terrain.",
+                period: "08/2024 - 09/2024",
+                tasks: [
+                    "Collecte de données pour la campagne d'été du HCP.",
+                    "Développement de la résilience et du souci du détail lors des opérations sur le terrain.",
+                ],
             },
         ],
     },
@@ -267,8 +287,7 @@ export const fr = {
     },
     leadership: {
         heading: "Leadership & Bénévolat",
-        subheading:
-            "Là où l'ingénierie rencontre l'humain : bâtir des communautés, mentorer ses pairs et prêcher par l'exemple.",
+        subheading: "Là où l'ingénierie rencontre l'humain.",
         humanSideLabel: "Côté Humain",
         humanSideTitle: "Mener des initiatives au-delà de la salle de classe",
         humanSide: "Côté Humain",

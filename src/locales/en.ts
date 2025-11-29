@@ -13,11 +13,33 @@ export const en = {
         stravaAria: "Strava profile",
     },
     navbar: {
+        items: [
+            { id: "hero", label: "Home" },
+            { id: "about", label: "About" },
+            { id: "skills", label: "Skills" },
+            { id: "experience", label: "Experience" },
+            { id: "projects", label: "Projects" },
+            { id: "community", label: "Community" },
+        ],
+        about: "About",
+        skills: "Skills",
+        experience: "Experience",
+        projects: "Projects",
+        community: "Community",
+        leadership: "Leadership",
+        languages: "Languages",
+        bookshelf: "Bookshelf",
+        endorsements: "Endorsements",
+        guestbook: "Guestbook",
+        contact: "Contact me",
         subtitle: "Engineering student at INPT specializing in distributed systems.",
     },
     common: {
         present: "Present",
         viewCredential: "View Credential",
+        viewCode: "View Code",
+        liveDemo: "Live Demo",
+        readMore: "Read more",
     },
     hero: {
         avatar: "/ikbi.jpg",
@@ -74,9 +96,22 @@ export const en = {
         subheading:
             "An engineering mindset grounded in automation and reliability, with a human side shaped by running, community and curiosity.",
         engineeringTitle: "Engineering Profile",
+        profileTitle: "Engineering Profile",
+        profileItems: [
+            "Cloud & DevOps engineering student at INPT specializing in ubiquitous and distributed systems, cloud, and IoT.",
+            "Passionate about automation, Infrastructure as Code (IaC), and building reliable cloud-native platforms.",
+            "Hands-on with VMware, Azure, AWS, Kubernetes, CI/CD pipelines, and observability tooling.",
+        ],
         beyondCodeTitle: "Beyond the Code",
+        beyondTitle: "Beyond the Code",
+        beyondItems: [
+            "Founder of INPT Runners, bringing people together around discipline, consistency, and wellbeing.",
+            "Curious reader interested in technology, leadership, and personal growth.",
+            "Enjoy building communities and initiatives where people can grow together beyond the classroom.",
+        ],
         languagesTitle: "Languages",
         languagesSubtitle: "Multilingual communication",
+        languagesList: ["English", "French", "Arabic", "Tamazight"],
     },
     skills: {
         heading: "Skills Matrix",
@@ -166,6 +201,28 @@ export const en = {
         heading: "Experience",
         subheading:
             "Hands-on roles applying cloud, automation and data skills in real environments.",
+        items: [
+            {
+                role: "Cloud Infrastructure Intern",
+                company: "MAROC DATACENTER (MDC)",
+                period: "06/2025 - 08/2025",
+                location: "Temara, Morocco",
+                tasks: [
+                    "Designing an automated private cloud on VMware vSphere.",
+                    "Setting up TrueNAS, Ansible automation, Wazuh security, and Veeam backup.",
+                ],
+            },
+            {
+                role: "Data Collector",
+                company: "Haut Commissariat au Plan du Maroc",
+                period: "08/2024 - 09/2024",
+                location: "Morocco",
+                tasks: [
+                    "HCP Summer Campaign data collection.",
+                    "Developed resilience and attention to detail in field operations.",
+                ],
+            },
+        ],
     },
     projects: {
         heading: "Featured Projects",
@@ -231,6 +288,29 @@ export const en = {
             "Spaces where engineering meets humanity: building communities, mentoring peers, and leading by example.",
         humanSideLabel: "Human side",
         humanSideTitle: "Leading initiatives beyond the classroom",
+        items: [
+            {
+                role: "Founder",
+                org: "INPT Runners (Student Running Club)",
+                period: "02/2025 - Present",
+                description:
+                    "Founded the first student running community. Organized weekly runs to promote mental resilience and discipline—values I bring to engineering teams.",
+            },
+            {
+                role: "Head of DevOps Cell",
+                org: "CIT Club (Computer & Telecom Club)",
+                period: "09/2024 - 05/2025",
+                description:
+                    "Led workshops on Cloud & CI/CD. Mentored peers in containerization and automation best practices.",
+            },
+            {
+                role: "Vice President",
+                org: "MSC (Math & Science Club)",
+                period: "09/2024 - 05/2025",
+                description:
+                    "Managed club operations and promoted scientific curiosity through events and seminars.",
+            },
+        ],
     },
     library: {
         heading: "Intellectual Foundations",

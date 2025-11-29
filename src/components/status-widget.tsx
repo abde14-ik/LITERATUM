@@ -2,9 +2,12 @@
 
 import { Activity, BookOpen, Cloud } from "lucide-react";
 import { motion } from "framer-motion";
-import { content } from "@/constants/content";
+import { useLanguage } from "@/context/language-context";
 
 export function StatusWidget() {
+    const { content } = useLanguage();
+    const hero = content.hero;
+
     return (
         <motion.div
             className="rounded-2xl border border-slate-800/80 bg-slate-950/70 px-4 py-4 text-xs text-slate-200 shadow-lg shadow-slate-950/60 backdrop-blur-md"
@@ -19,7 +22,7 @@ export function StatusWidget() {
                     </span>
                 </div>
                 <span className="text-[0.65rem] text-slate-500">
-                    {content.hero.statusTitle}
+                    {hero.statusTitle}
                 </span>
             </div>
 
@@ -30,10 +33,10 @@ export function StatusWidget() {
                     </span>
                     <div className="space-y-0.5">
                         <p className="text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
-                            {content.hero.statusCloudLabel}
+                            {hero.statusCloudLabel}
                         </p>
                         <p className="text-[0.85rem] font-medium text-slate-100">
-                            {content.hero.statusCloudValue}
+                            {hero.statusCloudValue}
                         </p>
                     </div>
                 </div>
@@ -44,16 +47,16 @@ export function StatusWidget() {
                     </span>
                     <div className="space-y-0.5">
                         <p className="text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
-                            {content.hero.statusBookLabel}
+                            {hero.statusBookLabel}
                         </p>
                         <p
                             className="text-[0.85rem] font-medium text-slate-100"
-                            title={content.hero.statusBookSubtitle}
+                            title={hero.statusBookSubtitle}
                         >
-                            {content.hero.statusBookValue}
+                            {hero.statusBookValue}
                         </p>
                         <p className="text-[0.7rem] text-slate-400">
-                            {content.hero.statusBookAuthor}
+                            {hero.statusBookAuthor}
                         </p>
                     </div>
                 </div>
@@ -64,13 +67,13 @@ export function StatusWidget() {
                     </span>
                     <div className="space-y-0.5">
                         <p className="text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
-                            {content.hero.statusRunLabel}
+                            {hero.statusRunLabel}
                         </p>
                         <p
                             className="text-[0.85rem] font-medium text-slate-100"
-                            title={content.hero.statusRunSubtitle}
+                            title={hero.statusRunSubtitle}
                         >
-                            {content.hero.statusRunValue}
+                            {hero.statusRunValue}
                         </p>
                     </div>
                 </div>

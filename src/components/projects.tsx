@@ -74,7 +74,7 @@ export function ProjectsSection() {
                                     className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-zinc-900 px-3 py-1.5 text-[0.7rem] font-medium text-zinc-100 hover:bg-zinc-800"
                                 >
                                     <Code2 className="h-3 w-3" />
-                                    <span>{content.projects.viewCodeLabel}</span>
+                                    <span>{content.common.viewCode}</span>
                                 </a>
                             )}
                             {project.liveUrl && (
@@ -85,7 +85,7 @@ export function ProjectsSection() {
                                     className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-zinc-100 px-3 py-1.5 text-[0.7rem] font-medium text-black shadow-sm hover:bg-white"
                                 >
                                     <ExternalLink className="h-3 w-3" />
-                                    <span>{content.projects.liveDemoLabel}</span>
+                                    <span>{content.common.liveDemo}</span>
                                 </a>
                             )}
                         </div>
