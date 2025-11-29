@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === "production";
-
 const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
@@ -9,8 +7,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: isProd ? "/portfolio" : undefined,
-  assetPrefix: isProd ? "/portfolio/" : undefined,
+  basePath: "/portfolio", // MUST match your GitHub repo name exactly
+  assetPrefix: "/portfolio/",
+  trailingSlash: true,
 };
 
 export default nextConfig;

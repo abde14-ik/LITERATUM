@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { prefix } from "@/lib/utils";
 
 type Book3DProps = {
     title: string;
@@ -31,7 +32,7 @@ export function Book3D({ title, image, onSelect, isActive }: Book3DProps) {
                     {/* Cover image or fallback */}
                     {image ? (
                         <Image
-                            src={image}
+                            src={prefix(image)}
                             alt={title}
                             fill
                             className="rounded-xl object-cover"

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { prefix } from "@/lib/utils";
 
 const galleryItems = [
     {
@@ -48,7 +49,7 @@ export function Gallery() {
                         className={`relative overflow-hidden rounded-xl bg-slate-900/60 ${item.cols} ${item.rows}`}
                     >
                         <Image
-                            src={item.src}
+                            src={prefix(item.src)}
                             alt={item.alt}
                             fill
                             className="object-cover"

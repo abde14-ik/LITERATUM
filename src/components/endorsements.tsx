@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Linkedin } from "lucide-react";
 import { useLanguage } from "@/context/language-context";
+import { prefix } from "@/lib/utils";
 
 export function EndorsementsSection() {
     const { content } = useLanguage();
@@ -34,7 +35,7 @@ export function EndorsementsSection() {
                         <div className="flex items-start gap-3">
                             <div className="relative h-10 w-10 overflow-hidden rounded-full border border-white/10 bg-black">
                                 <Image
-                                    src={item.image}
+                                    src={prefix(item.image)}
                                     alt={item.name}
                                     fill
                                     className="object-cover"

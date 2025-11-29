@@ -5,6 +5,7 @@ import { volunteering } from "@/constants/data";
 import { Activity, Terminal, Sigma } from "lucide-react";
 import { content } from "@/constants/content";
 import Image from "next/image";
+import { prefix } from "@/lib/utils";
 
 const sectionVariants = {
     hidden: { opacity: 0, y: 24 },
@@ -59,7 +60,7 @@ export function LeadershipSection() {
                                 <div className="mb-3 overflow-hidden rounded-xl">
                                     <div className="relative aspect-[16/9] w-full">
                                         <Image
-                                            src={item.image}
+                                            src={prefix(item.image)}
                                             alt={`${item.org} volunteering`}
                                             fill
                                             className="object-cover"

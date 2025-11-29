@@ -8,6 +8,7 @@ import { Cairo } from "next/font/google";
 import { motion } from "framer-motion";
 import { profile } from "@/constants/data";
 import { content } from "@/constants/content";
+import { prefix } from "@/lib/utils";
 import { AvatarModal } from "@/components/avatar-modal";
 import { NavDropdown } from "@/components/nav-dropdown";
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -62,7 +63,7 @@ export function Navbar() {
                     >
                         <motion.div layoutId="avatar-image" className="relative h-full w-full">
                             <Image
-                                src={content.hero.avatar}
+                                src={prefix(content.hero.avatar)}
                                 alt={profile.name}
                                 fill
                                 className="object-cover"
@@ -183,7 +184,7 @@ export function Navbar() {
             <AvatarModal
                 isOpen={isAvatarOpen}
                 onClose={() => setIsAvatarOpen(false)}
-                src={content.hero.avatar}
+                src={prefix(content.hero.avatar)}
                 alt={profile.name}
             />
         </>
