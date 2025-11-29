@@ -96,7 +96,7 @@ export function HeroSection() {
                 </div>
 
                 {/* Right column: Status bento grid */}
-                <div className="mt-6 lg:mt-0">
+                <div className="mt-6 xl:mt-10">
                     <StatusBento />
                 </div>
             </div>
