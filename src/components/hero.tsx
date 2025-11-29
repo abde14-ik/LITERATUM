@@ -36,7 +36,7 @@ export function HeroSection() {
             variants={heroVariants}
             transition={{ duration: 0.7, ease: "easeOut" }}
         >
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center">
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-16 xl:grid-cols-2 xl:items-center">
                 {/* Left column: intro and CTAs */}
                 <div className="relative z-10 space-y-6">
                     <p className="flex items-center gap-2 text-[0.7rem] font-mono text-amber-400 sm:text-xs">
@@ -45,7 +45,7 @@ export function HeroSection() {
                     </p>
 
                     <div>
-                        <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tighter text-white whitespace-nowrap">
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-extrabold tracking-tighter text-white whitespace-nowrap max-w-[90vw]">
                             <span>{profile.name}</span>
                         </h1>
                         <p className="mt-3 flex flex-wrap items-center justify-start gap-3 text-xl text-zinc-300 sm:text-2xl sm:gap-4">

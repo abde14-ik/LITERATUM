@@ -157,7 +157,7 @@ export function Navbar() {
                         <LanguageSwitcher />
                         <Link
                             href="#contact"
-                            className="rounded-full bg-zinc-100 px-5 py-1.5 text-sm font-medium text-black shadow-sm shadow-black/40 transition hover:bg-white whitespace-nowrap min-w-fit"
+                            className="rounded-full bg-zinc-100 px-5 py-1.5 text-sm font-medium text-black shadow-sm shadow-black/40 transition hover:bg-white whitespace-nowrap min-w-fit flex-shrink-0"
                         >
                             {navbar.contact ?? nav.contact}
                         </Link>
