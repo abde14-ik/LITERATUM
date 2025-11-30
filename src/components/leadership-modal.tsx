@@ -418,7 +418,7 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
                                                     }}
                                                 >
                                                     {event.images && event.images.length > 0 ? (
-                                                        <div className="relative aspect-video w-full overflow-hidden">
+                                                        <div className="relative aspect-video w-full overflow-hidden bg-slate-800">
                                                             <Image
                                                                 src={prefix(
                                                                     event.images[
@@ -428,7 +428,11 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
                                                                 alt={event.title}
                                                                 fill
                                                                 className="object-cover object-top transition-opacity duration-500"
-                                                                sizes="(min-width: 768px) 200px, 100vw"
+                                                                quality={75}
+                                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                                                {...(index === 0
+                                                                    ? { priority: true }
+                                                                    : { loading: "lazy" as const })}
                                                             />
                                                         </div>
                                                     ) : (
@@ -500,7 +504,8 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
                                                 alt={activeEvent.title}
                                                 fill
                                                 className="object-contain"
-                                                sizes="(min-width: 768px) 960px, 100vw"
+                                                quality={75}
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 960px"
                                             />
                                         )}
                                     </div>
