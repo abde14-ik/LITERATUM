@@ -348,55 +348,54 @@ export const en = {
             {
                 role: "Head of DevOps Cell",
                 org: "CIT Club (Computer & Telecom Club)",
-                logo: "/images/cit-logo.png",
+                logo: "/images/cit-logo-v2.png",
                 period: "09/2024 - 05/2025",
                 description:
                     "Led workshops on Cloud & CI/CD. Mentored peers in containerization and automation best practices.",
                 details: {
                     headline:
-                        "Founded in 1998, CIT is the first extracurricular club at INPT. As Head of the DevOps Cell, I designed a complete 'Zero to Hero' curriculum.",
+                        "Founded in 1998, CIT is INPT's longest-running student club. As Head of the DevOps Cell, I structured a technical curriculum to introduce peers to modern infrastructure operations.",
                     description:
-                        "I structured a semester-long learning path covering everything from OS internals to Containerization, bridging the gap between academic theory and industry operations.",
+                        "I organized weekly technical sessions bridging the gap between academic theory and industry reality, focusing on the transition from traditional IT to Cloud-Native workflows.",
+                    logo: "/images/cit-logo-v2.png",
                     featureImage: "/images/cit-main.JPG",
-                    logo: "/images/cit-logo.png",
                     stats: {
                         role: "Head of DevOps Cell",
                         since: "Est. 1998",
-                        impact: "7+ Core Modules",
-                        members: "25–35 students per session",
+                        impact: "7+ Sessions",
+                        members: "Active Community",
                     },
                     resource: {
                         label: "Access Course Materials",
                         url: "https://github.com/CitInpt/CIT-Courses/tree/main/24-25/DevOpsCell",
-                        description:
-                            "Welcome to the DEVOPS CELL presentations hub! This repository is your one-stop place for all the insightful and collaborative presentations from our DevOps sessions, typically attended by 25–35 students per course and co-led by IKBI Abdelilah & LAKHIRI Rim. Dive into the world of DevOps, explore the collective knowledge we've built together, and thank you to everyone who contributed to these sessions.",
+                        description: "Access my full slide decks and resources on GitHub.",
                     },
                     events: [
                         {
-                            title: "Module 1: Systems Foundations",
+                            title: "Module 1: Culture & OS Foundations",
                             images: [
                                 "/images/cit-11.jpg",
                                 "/images/cit12.jpg",
                                 "/images/cit13.jpg",
                             ],
-                            desc: "Deep dive into Operating Systems, Linux Kernel internals, and Networking fundamentals (Layers 1-7).",
+                            desc: "Introduction to the DevOps philosophy (CALMS), SDLC evolution, and Operating System internals.",
                         },
                         {
-                            title: "Module 2: Infra & Virtualization",
+                            title: "Module 2: The Infrastructure Stack",
                             images: [
                                 "/images/cit-21.jpg",
                                 "/images/cit-22.jpg",
                                 "/images/cit-23.jpg",
                             ],
-                            desc: "Mastering Type 1/Type 2 Hypervisors and the shift from traditional IT to DevOps culture.",
+                            desc: "Deep dive into Linux administration, Networking protocols (OSI/TCP/IP), and Virtualization technologies.",
                         },
                         {
-                            title: "Module 3: Docker & Containers",
+                            title: "Module 3: Containerization",
                             images: [
                                 "/images/cit-31.jpg",
                                 "/images/cit-32.jpg",
                             ],
-                            desc: "Hands-on workshops moving from VMs to Containers, writing Dockerfiles, and orchestration basics.",
+                            desc: "Hands-on workshops moving from VMs to Containers, mastering Docker architecture and image creation.",
                         },
                     ],
                 },
