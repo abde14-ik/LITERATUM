@@ -4,7 +4,7 @@ export const fr = {
     nav: {
         home: "Accueil",
         about: "À propos",
-        education: "Parcours académique",
+        education: "Formation",
         skills: "Compétences",
         experience: "Expérience",
         projects: "Projets",
@@ -30,10 +30,10 @@ export const fr = {
         community: "Communauté",
         leadership: "Leadership",
         languages: "Langues",
-        bookshelf: "Bibliothèque",
-        endorsements: "Recommandations",
+        bookshelf: "Livres",
+        endorsements: "Avis",
         guestbook: "Livre d'Or",
-        contact: "Contactez-moi",
+        contact: "Contact",
         subtitle: "Élève ingénieur à l'INPT spécialisé dans les systèmes distribués.",
     },
     common: {
