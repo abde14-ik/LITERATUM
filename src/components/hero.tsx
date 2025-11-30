@@ -40,9 +40,11 @@ export function HeroSection() {
                         <p className="mt-2 text-lg md:text-xl font-bold text-amber-400">
                             {hero.badge}
                         </p>
-                        <p className="mt-4 max-w-xl text-sm sm:text-base text-slate-400 leading-relaxed">
-                            {hero.bio}
-                        </p>
+                        {hero.bio && hero.bio !== hero.badge && (
+                            <p className="mt-4 max-w-xl text-sm sm:text-base text-slate-400 leading-relaxed">
+                                {hero.bio}
+                            </p>
+                        )}
                     </div>
 
                     <div className="flex flex-wrap items-center gap-3">
@@ -68,7 +70,7 @@ export function HeroSection() {
                 </div>
 
                 {/* Right column: Status bento grid */}
-                <div className="mt-6 xl:mt-10">
+                <div className="mt-6 xl:mt-10 md:pl-4">
                     <StatusBento />
                 </div>
             </div>
