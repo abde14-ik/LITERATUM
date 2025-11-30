@@ -127,6 +127,7 @@ export function LeadershipSection() {
                         org={selectedItem.org}
                         role={selectedItem.role}
                         period={selectedItem.period}
+                        logo={selectedItem.logo}
                         details={selectedItem.details}
                     />
                 )}

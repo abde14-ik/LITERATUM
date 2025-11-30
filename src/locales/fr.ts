@@ -296,6 +296,7 @@ export const fr = {
             {
                 role: "Fondateur",
                 org: "INPT Runners (Club de Course Étudiant)",
+                logo: "/images/logo-runners.png",
                 description:
                     "A fondé la première communauté étudiante de course à pied. Organisation de courses hebdomadaires pour promouvoir la résilience mentale et la discipline — des valeurs que j'apporte aux équipes d'ingénierie.",
                 details: {

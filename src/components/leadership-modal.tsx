@@ -32,10 +32,11 @@ export type LeadershipModalProps = {
     org: string;
     role: string;
     period?: string;
+    logo?: string;
     details: LeadershipDetails;
 };
 
-export function LeadershipModal({ isOpen, onClose, org, role, period, details }: LeadershipModalProps) {
+export function LeadershipModal({ isOpen, onClose, org, role, period, logo, details }: LeadershipModalProps) {
     const [mounted, setMounted] = useState(false);
     const [imageIndex, setImageIndex] = useState(0);
     const [activeEventIndex, setActiveEventIndex] = useState<number | null>(null);
@@ -115,17 +116,32 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, details }:
                                 <X className="h-4 w-4" />
                             </button>
 
-                            <header className="mb-4 space-y-1 pr-10">
-                                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-teal-300">
-                                    Leadership Impact
-                                </p>
-                                <h2 className="text-xl font-semibold text-slate-50 sm:text-2xl">
-                                    {org}
-                                </h2>
-                                <p className="text-xs text-slate-300 sm:text-sm">
-                                    {role}
-                                    {period ? ` · ${period}` : null}
-                                </p>
+                            <header className="mb-4 pr-10">
+                                <div className="flex items-center gap-4">
+                                    {logo && (
+                                        <div className="relative h-16 w-16 rounded-full overflow-hidden border-2 border-white/10 bg-slate-900/60">
+                                            <Image
+                                                src={prefix(logo)}
+                                                alt={org}
+                                                fill
+                                                className="object-cover"
+                                                sizes="64px"
+                                            />
+                                        </div>
+                                    )}
+                                    <div className="space-y-1">
+                                        <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-teal-300">
+                                            Leadership Impact
+                                        </p>
+                                        <h2 className="text-xl font-semibold text-slate-50 sm:text-2xl">
+                                            {org}
+                                        </h2>
+                                        <p className="text-xs text-slate-300 sm:text-sm">
+                                            {role}
+                                            {period ? ` · ${period}` : null}
+                                        </p>
+                                    </div>
+                                </div>
                             </header>
 
                             <section className="space-y-4 overflow-y-auto pr-1">
@@ -161,12 +177,12 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, details }:
                                     <div className="mt-3 flex flex-col gap-3 rounded-2xl border border-pink-500/60 bg-pink-950/20 p-3 sm:p-4">
                                         <div className="flex items-center gap-3">
                                             {subInitiative.logo ? (
-                                                <div className="relative h-10 w-10 overflow-hidden rounded-full bg-pink-500/20">
+                                                <div className="relative h-10 w-10 overflow-hidden rounded-full border border-pink-200/70 bg-pink-100">
                                                     <Image
                                                         src={prefix(subInitiative.logo)}
                                                         alt={subInitiative.title}
                                                         fill
-                                                        className="object-contain p-1.5"
+                                                        className="object-cover"
                                                         sizes="40px"
                                                     />
                                                 </div>

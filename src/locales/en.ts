@@ -293,6 +293,7 @@ export const en = {
                 role: "Founder",
                 org: "INPT Runners (Student Running Club)",
                 period: "02/2025 - Present",
+                logo: "/images/logo-runners.png",
                 description:
                     "Founded the first student running community. Organized weekly runs to promote mental resilience and discipline—values I bring to engineering teams.",
                 details: {
