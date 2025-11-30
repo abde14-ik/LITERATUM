@@ -21,7 +21,7 @@ export type LeadershipDetails = {
     };
     events?: {
         title: string;
-        image?: string;
+        images?: string[];
         desc?: string;
     }[];
 };
@@ -37,9 +37,18 @@ export type LeadershipModalProps = {
 
 export function LeadershipModal({ isOpen, onClose, org, role, period, details }: LeadershipModalProps) {
     const [mounted, setMounted] = useState(false);
+    const [imageIndex, setImageIndex] = useState(0);
 
     useEffect(() => {
         setMounted(true);
+    }, []);
+
+    useEffect(() => {
+        const id = setInterval(() => {
+            setImageIndex((prev) => prev + 1);
+        }, 5000);
+
+        return () => clearInterval(id);
     }, []);
 
     if (!mounted) return null;
@@ -151,13 +160,13 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, details }:
                                                 key={`${event.title}-${index}`}
                                                 className="flex flex-col overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-900/80 text-xs text-slate-200 shadow-sm shadow-black/50"
                                             >
-                                                {event.image ? (
-                                                    <div className="relative aspect-video w-full">
+                                                {event.images && event.images.length > 0 ? (
+                                                    <div className="relative aspect-video w-full overflow-hidden">
                                                         <Image
-                                                            src={prefix(event.image)}
+                                                            src={prefix(event.images[imageIndex % event.images.length])}
                                                             alt={event.title}
                                                             fill
-                                                            className="object-cover"
+                                                            className="object-cover object-top transition-opacity duration-500"
                                                             sizes="(min-width: 768px) 200px, 100vw"
                                                         />
                                                     </div>

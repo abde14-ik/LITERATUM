@@ -311,22 +311,35 @@ export const fr = {
                         title: "She Runs INPT",
                         description:
                             "Un espace dédié pour encourager les femmes dans le sport et renforcer la confiance.",
-                        logo: "/images/sheruns-logo.png",
+                        logo: "/images/events/sheruns-logo.png",
                     },
                     events: [
                         {
                             title: "Rabat RUN",
-                            image: "/images/events/rabat-run.jpg",
+                            images: [
+                                "/images/events/rabat-run-1.jpg",
+                                "/images/events/rabat-run-2.jpg",
+                            ],
                             desc: "Une course de 5km investissant les rues de la capitale.",
                         },
                         {
                             title: "Marathon Intl. de Rabat",
-                            image: "/images/events/marathon.jpg",
+                            images: [
+                                "/images/events/marathon-1.JPG",
+                                "/images/events/marathon-2.JPG",
+                                "/images/events/marathon-3.jpg",
+                                "/images/events/marathon-4.JPG",
+                                "/images/events/marathon-5.jpg",
+                            ],
                             desc: "Notre équipe à la conquête des distances 21k et 42k.",
                         },
                         {
                             title: "ICESCO Run",
-                            image: "/images/events/icesco.jpg",
+                            images: [
+                                "/images/events/icesco-1.jpg",
+                                "/images/events/icesco-2.jpg",
+                                "/images/events/icesco-3.jpg",
+                            ],
                             desc: "Promouvoir la paix et le patrimoine à travers la course.",
                         },
                     ],

@@ -308,22 +308,35 @@ export const en = {
                         title: "She Runs INPT",
                         description:
                             "A dedicated space to empower women in sports and build confidence.",
-                        logo: "/images/sheruns-logo.png",
+                        logo: "/images/events/sheruns-logo.png",
                     },
                     events: [
                         {
                             title: "Rabat RUN",
-                            image: "/images/events/rabat-run.jpg",
+                            images: [
+                                "/images/events/rabat-run-1.jpg",
+                                "/images/events/rabat-run-2.jpg",
+                            ],
                             desc: "A 5k community run taking over the streets of the capital.",
                         },
                         {
                             title: "Intl. Marathon of Rabat",
-                            image: "/images/events/marathon.jpg",
+                            images: [
+                                "/images/events/marathon-1.JPG",
+                                "/images/events/marathon-2.JPG",
+                                "/images/events/marathon-3.jpg",
+                                "/images/events/marathon-4.JPG",
+                                "/images/events/marathon-5.jpg",
+                            ],
                             desc: "Our team conquering the 21k and 42k distances.",
                         },
                         {
                             title: "ICESCO Run",
-                            image: "/images/events/icesco.jpg",
+                            images: [
+                                "/images/events/icesco-1.jpg",
+                                "/images/events/icesco-2.jpg",
+                                "/images/events/icesco-3.jpg",
+                            ],
                             desc: "Promoting peace and heritage through running.",
                         },
                     ],
