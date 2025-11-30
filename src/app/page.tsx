@@ -17,13 +17,13 @@ export default function Home() {
     <div className="space-y-12 sm:space-y-16">
       <HeroSection />
       <AboutSection />
-      <LanguagesSection />
       <EducationSection />
       <ExperienceSection />
       <ProjectsSection />
       <SkillsSection />
       <LeadershipSection />
       <BookshelfSection />
+      <LanguagesSection />
       <EndorsementsSection />
       <div className="h-px w-full bg-violet-900/60" />
       <GuestbookSection />
