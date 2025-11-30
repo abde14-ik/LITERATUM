@@ -318,15 +318,15 @@ export const fr = {
                     },
                     events: [
                         {
-                            title: "Rabat RUN",
+                            title: "Rabat Run",
                             images: [
                                 "/images/events/rabat-run-1.jpg",
                                 "/images/events/rabat-run-2.jpg",
                             ],
-                            desc: "Une course de 5km investissant les rues de la capitale.",
+                            desc: "Une célébration annuelle gratuite du sport et du patrimoine (série 'TheCityRun'), explorant les sites emblématiques de Rabat.",
                         },
                         {
-                            title: "Marathon Intl. de Rabat",
+                            title: "Marathon International de Rabat",
                             images: [
                                 "/images/events/marathon-1.JPG",
                                 "/images/events/marathon-2.JPG",
@@ -334,16 +334,16 @@ export const fr = {
                                 "/images/events/marathon-4.JPG",
                                 "/images/events/marathon-5.jpg",
                             ],
-                            desc: "Notre équipe à la conquête des distances 21k et 42k.",
+                            desc: "Événement majeur sous Haut Patronage Royal, réunissant l'élite athlétique sur un parcours traversant les monuments historiques.",
                         },
                         {
-                            title: "ICESCO Run",
+                            title: "Marathon de l'ICESCO",
                             images: [
                                 "/images/events/icesco-1.jpg",
                                 "/images/events/icesco-2.jpg",
                                 "/images/events/icesco-3.jpg",
                             ],
-                            desc: "Promouvoir la paix et le patrimoine à travers la course.",
+                            desc: "Promouvoir la cohésion sociale et le bien-être. Une course inclusive de 9km organisée par l'ICESCO pour tous les niveaux.",
                         },
                     ],
                 },

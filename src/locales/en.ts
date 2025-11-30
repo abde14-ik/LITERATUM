@@ -315,12 +315,12 @@ export const en = {
                     },
                     events: [
                         {
-                            title: "Rabat RUN",
+                            title: "Rabat Run",
                             images: [
                                 "/images/events/rabat-run-1.jpg",
                                 "/images/events/rabat-run-2.jpg",
                             ],
-                            desc: "A 5k community run taking over the streets of the capital.",
+                            desc: "A free annual celebration of fitness and heritage as part of 'TheCityRun', exploring Rabat's landmarks through open/timed courses.",
                         },
                         {
                             title: "Intl. Marathon of Rabat",
@@ -331,16 +331,16 @@ export const en = {
                                 "/images/events/marathon-4.JPG",
                                 "/images/events/marathon-5.jpg",
                             ],
-                            desc: "Our team conquering the 21k and 42k distances.",
+                            desc: "A major race under Royal Patronage, uniting elite national and international athletes on a course winding through historic monuments.",
                         },
                         {
-                            title: "ICESCO Run",
+                            title: "ICESCO Marathon",
                             images: [
                                 "/images/events/icesco-1.jpg",
                                 "/images/events/icesco-2.jpg",
                                 "/images/events/icesco-3.jpg",
                             ],
-                            desc: "Promoting peace and heritage through running.",
+                            desc: "Promoting social cohesion and well-being. An inclusive 9km race organized by ICESCO open to all ages and abilities.",
                         },
                     ],
                 },
