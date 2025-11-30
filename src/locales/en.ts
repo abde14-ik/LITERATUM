@@ -283,11 +283,11 @@ export const en = {
         ],
     },
     leadership: {
-        heading: "Leadership & Volunteering",
+        heading: "Beyond the Code",
         subheading:
-            "Spaces where engineering meets humanity: building communities, mentoring peers, and leading by example.",
-        humanSideLabel: "Human side",
-        humanSideTitle: "Leading initiatives beyond the classroom",
+            "Leading initiatives, building communities, and fostering resilience outside the terminal.",
+        humanSideLabel: "COMMUNITY & IMPACT",
+        humanSideTitle: "Beyond the Code",
         items: [
             {
                 role: "Founder",

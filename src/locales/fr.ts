@@ -286,12 +286,14 @@ export const fr = {
         ],
     },
     leadership: {
-        heading: "Leadership & Bénévolat",
-        subheading: "Là où l'ingénierie rencontre l'humain.",
-        humanSideLabel: "Côté Humain",
-        humanSideTitle: "Mener des initiatives au-delà de la salle de classe",
-        humanSide: "Côté Humain",
-        initiatives: "Mener des initiatives au-delà de la salle de classe",
+        heading: "Au-delà du Code",
+        subheading:
+            "Mener des initiatives, bâtir des communautés et cultiver la résilience en dehors du terminal.",
+        humanSideLabel: "COMMUNAUTÉ & IMPACT",
+        humanSideTitle: "Au-delà du Code",
+        humanSide: "COMMUNAUTÉ & IMPACT",
+        initiatives:
+            "Mener des initiatives, bâtir des communautés et cultiver la résilience en dehors du terminal.",
         items: [
             {
                 role: "Fondateur",
