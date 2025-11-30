@@ -135,7 +135,7 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
                             <header className="mb-4 pr-10">
                                 <div className="flex items-center gap-4">
                                     {logo && (
-                                        <div className="relative h-16 w-16 rounded-full overflow-hidden border-2 border-white/10 bg-slate-900/60">
+                                        <div className="relative h-16 w-16 shrink-0 rounded-full overflow-hidden border-2 border-white/10 bg-slate-900/60">
                                             <Image
                                                 src={prefix(logo)}
                                                 alt={org}
