@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { Activity, Calendar, ChevronLeft, ChevronRight, Github, Instagram, Users, X } from "lucide-react";
+import { Activity, Calendar, ChevronLeft, ChevronRight, Github, Instagram, Linkedin, Users, X } from "lucide-react";
 import { prefix } from "@/lib/utils";
 
 export type LeadershipDetails = {
@@ -74,6 +74,7 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
 
     const isInptRunners = org.includes("INPT Runners");
     const isCitClub = org.includes("CIT Club");
+    const isMscClub = org.includes("MSC");
     const isInstagramResource = resource?.url?.toLowerCase().includes("instagram");
 
     const openEventLightbox = (eventIndex: number, startIndex: number = 0) => {
@@ -300,6 +301,29 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
                                                     </a>
                                                 </div>
                                             )}
+
+                                            {isMscClub && (
+                                                <div className="mt-3 flex flex-wrap items-center justify-end gap-2">
+                                                    <a
+                                                        href="https://www.instagram.com/msc_inpt/"
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-pink-600 to-purple-600 px-3 py-1 text-[0.7rem] font-semibold text-slate-50 shadow-sm shadow-black/40 transition hover:from-pink-500 hover:to-purple-500"
+                                                    >
+                                                        <Instagram className="h-3 w-3" />
+                                                        <span>Follow MSC on Instagram</span>
+                                                    </a>
+                                                    <a
+                                                        href="https://www.linkedin.com/company/msc-inpt/"
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        className="inline-flex items-center gap-1 rounded-full bg-[#0A66C2] px-3 py-1 text-[0.7rem] font-semibold text-slate-50 shadow-sm shadow-black/40 transition hover:bg-[#0b5bb0]"
+                                                    >
+                                                        <Linkedin className="h-3 w-3" />
+                                                        <span>View MSC on LinkedIn</span>
+                                                    </a>
+                                                </div>
+                                            )}
                                         </div>
                                     )}
 
@@ -338,20 +362,22 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
                                     </div>
                                 )}
 
-                                {resource && !isCitClub && (
+                                {resource && !isCitClub && !isMscClub && (
                                     <div className="mt-3 flex flex-col gap-1">
-                                        <a
-                                            href={resource.url}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-[0.7rem] font-semibold shadow-sm shadow-black/40 transition ${isInstagramResource
+                                        <div className="flex flex-wrap items-center gap-2">
+                                            <a
+                                                href={resource.url}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-[0.7rem] font-semibold shadow-sm shadow-black/40 transition ${isInstagramResource
                                                     ? "bg-gradient-to-r from-pink-600 to-purple-600 text-slate-50 hover:from-pink-500 hover:to-purple-500"
                                                     : "bg-slate-800 text-slate-50 hover:bg-slate-700"
-                                                }`}
-                                        >
-                                            {isInstagramResource && <Instagram className="h-3 w-3" />}
-                                            <span>{resource.label}</span>
-                                        </a>
+                                                    }`}
+                                            >
+                                                {isInstagramResource && <Instagram className="h-3 w-3" />}
+                                                <span>{resource.label}</span>
+                                            </a>
+                                        </div>
                                         {resource.description && (
                                             <p className="text-[0.7rem] text-slate-300">
                                                 {resource.description}
