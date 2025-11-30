@@ -21,6 +21,7 @@ export type LeadershipDetails = {
         role?: string;
         since?: string;
         impact?: string;
+        focus?: string;
     };
     subInitiative?: {
         title: string;
@@ -69,10 +70,11 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
 
     if (!mounted) return null;
 
-    const { headline, description, stats, subInitiative, events } = details;
+    const { headline, description, stats, subInitiative, events, resource } = details;
 
     const isInptRunners = org.includes("INPT Runners");
     const isCitClub = org.includes("CIT Club");
+    const isInstagramResource = resource?.url?.toLowerCase().includes("instagram");
 
     const openEventLightbox = (eventIndex: number, startIndex: number = 0) => {
         setActiveEventIndex(eventIndex);
@@ -331,6 +333,28 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
                                         {subInitiative.description && (
                                             <p className="text-xs text-pink-100/90 sm:text-[0.8rem]">
                                                 {subInitiative.description}
+                                            </p>
+                                        )}
+                                    </div>
+                                )}
+
+                                {resource && !isCitClub && (
+                                    <div className="mt-3 flex flex-col gap-1">
+                                        <a
+                                            href={resource.url}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-[0.7rem] font-semibold shadow-sm shadow-black/40 transition ${isInstagramResource
+                                                    ? "bg-gradient-to-r from-pink-600 to-purple-600 text-slate-50 hover:from-pink-500 hover:to-purple-500"
+                                                    : "bg-slate-800 text-slate-50 hover:bg-slate-700"
+                                                }`}
+                                        >
+                                            {isInstagramResource && <Instagram className="h-3 w-3" />}
+                                            <span>{resource.label}</span>
+                                        </a>
+                                        {resource.description && (
+                                            <p className="text-[0.7rem] text-slate-300">
+                                                {resource.description}
                                             </p>
                                         )}
                                     </div>

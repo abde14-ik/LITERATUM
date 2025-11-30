@@ -404,8 +404,60 @@ export const en = {
                 role: "Vice President",
                 org: "MSC (Math & Science Club)",
                 period: "09/2024 - 05/2025",
+                logo: "/images/msc.png",
                 description:
                     "Managed club operations and promoted scientific curiosity through events and seminars.",
+                details: {
+                    headline:
+                        "MSC gathers mathematics and science enthusiasts at INPT to foster critical thinking through competitions, conferences, and creative problem-solving.",
+                    description:
+                        "As Vice President, I bridged the gap between abstract math and community engagement, managing operations and leading the club's visual identity.",
+                    logo: "/images/msc.png",
+                    stats: {
+                        role: "Vice President",
+                        focus: "Math & Design",
+                        impact: "WCA Collaboration",
+                        members: "Active Community",
+                    },
+                    resource: {
+                        label: "Follow MSC on Instagram",
+                        url: "https://www.instagram.com/msc_inpt/",
+                        description: "Check out our community highlights and visual gallery.",
+                    },
+                    events: [
+                        {
+                            title: "Creative Direction & Design",
+                            images: [
+                                "/images/events/design-1.jpg",
+                                "/images/events/design-2.jpg",
+                                "/images/events/design-3.jpg",
+                                "/images/events/design-4.jpg",
+                                "/images/events/design-5.jpg",
+                            ],
+                            desc: "Lead designer for the club's visual identity, creating engaging social media campaigns and event assets.",
+                        },
+                        {
+                            title: "INPT Rubik's Cube Open",
+                            images: [
+                                "/images/events/rubik-1.jpg",
+                                "/images/events/rubik-2.jpg",
+                                "/images/events/rubik-3.jpg",
+                                "/images/events/rubik-4.jpg",
+                                "/images/events/rubik-5.jpg",
+                            ],
+                            desc: "Hosted during the INPT Olympiads in official collaboration with the World Cube Association (WCA).",
+                        },
+                        {
+                            title: "Math Trivia Night: Ramadan Edition",
+                            images: [
+                                "/images/events/trivia-1.jpg",
+                                "/images/events/trivia-2.jpg",
+                                "/images/events/trivia-3.jpg",
+                            ],
+                            desc: "A spiritual and intellectual evening bringing students together for group-based mathematical problem solving.",
+                        },
+                    ],
+                },
             },
         ],
     },
