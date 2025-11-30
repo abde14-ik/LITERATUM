@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Activity, Terminal, Sigma, ArrowRight } from "lucide-react";
+import { Activity, Terminal, Sigma, ArrowRight, Maximize2 } from "lucide-react";
 import Image from "next/image";
 import { prefix } from "@/lib/utils";
 import { useLanguage } from "@/context/language-context";
@@ -62,63 +62,92 @@ export function LeadershipSection() {
                 </div>
 
                 <div className="mt-4 grid gap-4 md:grid-cols-3">
-                    {volunteering.map((item) => (
-                        <div
-                            key={`${item.org}-${item.role}`}
-                            onClick={() => handleCardClick(item)}
-                            className={`flex flex-col rounded-2xl border bg-slate-950/60 p-4 text-sm text-slate-200 shadow-md shadow-slate-950/60 backdrop-blur-md transition-transform hover:-translate-y-1.5 hover:shadow-xl ${item.details ? "cursor-pointer hover:scale-[1.02]" : ""
-                                } ${item.org.includes("INPT Runners")
-                                    ? "border-violet-400/60 hover:border-violet-300/80 animate-pulse"
-                                    : "border-amber-200/40 hover:border-amber-300/80 hover:shadow-amber-400/25"
-                                }`}
-                        >
-                            {item.image && (
-                                <div className="mb-3 overflow-hidden rounded-xl">
-                                    <div className="relative aspect-[16/9] w-full">
+                    {volunteering.map((item) => {
+                        const teaserImage =
+                            item.logo ??
+                            item.details?.logo ??
+                            item.details?.events?.[0]?.images?.[0];
+
+                        return (
+                            <div
+                                key={`${item.org}-${item.role}`}
+                                onClick={() => handleCardClick(item)}
+                                className={`group relative flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-slate-950/60 p-4 text-sm text-slate-200 shadow-md shadow-slate-950/60 backdrop-blur-md transition-transform transition-colors hover:-translate-y-1 hover:shadow-2xl hover:shadow-violet-900/20 hover:border-violet-500/50 ${item.details ? "cursor-pointer" : "cursor-default opacity-80"
+                                    } ${item.org.includes("INPT Runners") ? "animate-pulse" : ""}`}
+                            >
+                                {teaserImage && (
+                                    <div className="pointer-events-none absolute inset-0">
                                         <Image
-                                            src={prefix(item.image)}
-                                            alt={`${item.org} volunteering`}
+                                            src={prefix(teaserImage)}
+                                            alt={`${item.org} background`}
                                             fill
-                                            className="object-cover"
+                                            className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-30"
+                                            sizes="(min-width: 768px) 400px, 100vw"
                                         />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/90 to-midnight/40" />
                                     </div>
-                                </div>
-                            )}
+                                )}
 
-                            <div className="flex items-start justify-between gap-2">
-                                <div>
-                                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-300">
-                                        {item.period}
-                                    </p>
-                                    <h4 className="mt-1 text-sm font-semibold text-slate-50">
-                                        {item.role}
-                                    </h4>
-                                    <p className="text-xs text-slate-300">{item.org}</p>
+                                {item.details && (
+                                    <div className="pointer-events-none absolute right-3 top-3 z-10 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                                        <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-black/70 text-slate-100 shadow-sm shadow-black/60">
+                                            <Maximize2 className="h-3 w-3" />
+                                        </span>
+                                    </div>
+                                )}
+
+                                <div className="relative z-10 flex h-full flex-col">
+                                    {item.image && (
+                                        <div className="mb-3 overflow-hidden rounded-xl">
+                                            <div className="relative aspect-[16/9] w-full">
+                                                <Image
+                                                    src={prefix(item.image)}
+                                                    alt={`${item.org} volunteering`}
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    <div className="flex items-start justify-between gap-2">
+                                        <div>
+                                            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-300">
+                                                {item.period}
+                                            </p>
+                                            <h4 className="mt-1 text-sm font-semibold text-slate-50">
+                                                {item.role}
+                                            </h4>
+                                            <p className="text-xs text-slate-300">{item.org}</p>
+                                        </div>
+                                        <span
+                                            className={`inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/80 ${item.org.includes("INPT Runners")
+                                                ? "text-violet-300"
+                                                : item.org.includes("CIT Club")
+                                                    ? "text-fuchsia-300"
+                                                    : "text-amber-300"
+                                                }`}
+                                        >
+                                            {item.org.includes("INPT Runners") && <Activity className="h-4 w-4" />}
+                                            {item.org.includes("CIT Club") && <Terminal className="h-4 w-4" />}
+                                            {item.org.includes("MSC") && <Sigma className="h-4 w-4" />}
+                                        </span>
+                                    </div>
+
+                                    <p className="mt-3 text-xs text-slate-300">{item.description}</p>
+
+                                    {item.details && (
+                                        <div className="mt-3">
+                                            <div className="group/cta inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[0.7rem] font-medium text-slate-100 shadow-sm shadow-black/40 backdrop-blur-sm transition hover:border-gold/50 hover:bg-gold/10 hover:text-gold">
+                                                <span>See impact</span>
+                                                <ArrowRight className="h-3 w-3 transition-transform duration-200 group-hover/cta:translate-x-1" />
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
-                                <span
-                                    className={`inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/80 ${item.org.includes("INPT Runners")
-                                        ? "text-violet-300"
-                                        : item.org.includes("CIT Club")
-                                            ? "text-fuchsia-300"
-                                            : "text-amber-300"
-                                        }`}
-                                >
-                                    {item.org.includes("INPT Runners") && <Activity className="h-4 w-4" />}
-                                    {item.org.includes("CIT Club") && <Terminal className="h-4 w-4" />}
-                                    {item.org.includes("MSC") && <Sigma className="h-4 w-4" />}
-                                </span>
                             </div>
-
-                            <p className="mt-3 text-xs text-slate-300">{item.description}</p>
-
-                            {item.details && (
-                                <div className="mt-3 inline-flex items-center gap-1 text-[0.7rem] font-medium text-violet-300">
-                                    <span>See impact</span>
-                                    <ArrowRight className="h-3 w-3" />
-                                </div>
-                            )}
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
                 {selectedItem?.details && (
                     <LeadershipModal
