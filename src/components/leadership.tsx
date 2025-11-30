@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Activity, Terminal, Sigma, ArrowRight, Maximize2 } from "lucide-react";
+import { ArrowRight, Maximize2 } from "lucide-react";
 import Image from "next/image";
 import { prefix } from "@/lib/utils";
 import { useLanguage } from "@/context/language-context";
@@ -88,8 +88,7 @@ export function LeadershipSection() {
                                 key={`${item.org}-${item.role}`}
                                 onClick={() => handleCardClick(item)}
                                 variants={cardVariants}
-                                className={`group relative flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-slate-950/60 p-4 text-sm text-slate-200 shadow-md shadow-slate-950/60 backdrop-blur-md transition-transform transition-colors hover:-translate-y-1 hover:shadow-2xl hover:shadow-violet-900/20 hover:border-violet-500/50 ${item.details ? "cursor-pointer" : "cursor-default opacity-80"
-                                    } ${item.org.includes("INPT Runners") ? "animate-pulse" : ""}`}
+                                className={`group relative flex flex-col overflow-hidden rounded-xl border border-white/5 bg-zinc-900/50 p-4 text-sm text-slate-200 shadow-md shadow-slate-950/60 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/30 ${item.details ? "cursor-pointer" : "cursor-default opacity-80"}`}
                                 onMouseMove={(event) => {
                                     const card = event.currentTarget;
                                     const rect = card.getBoundingClientRect();
