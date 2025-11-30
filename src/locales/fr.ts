@@ -298,6 +298,39 @@ export const fr = {
                 org: "INPT Runners (Club de Course Étudiant)",
                 description:
                     "A fondé la première communauté étudiante de course à pied. Organisation de courses hebdomadaires pour promouvoir la résilience mentale et la discipline — des valeurs que j'apporte aux équipes d'ingénierie.",
+                details: {
+                    headline:
+                        "INPT Runners est le club officiel de course de l'INPT, unissant les étudiants par la passion du mouvement et de l'endurance.",
+                    description:
+                        "Que vous sprintiez, trottiniez ou débutiez à peine — nous courons ensemble, nous progressons ensemble.",
+                    stats: {
+                        members: "94+ Membres Strava",
+                        growth: "Communauté Grandissante",
+                    },
+                    subInitiative: {
+                        title: "She Runs INPT",
+                        description:
+                            "Un espace dédié pour encourager les femmes dans le sport et renforcer la confiance.",
+                        logo: "/images/sheruns-logo.png",
+                    },
+                    events: [
+                        {
+                            title: "Rabat RUN",
+                            image: "/images/events/rabat-run.jpg",
+                            desc: "Une course de 5km investissant les rues de la capitale.",
+                        },
+                        {
+                            title: "Marathon Intl. de Rabat",
+                            image: "/images/events/marathon.jpg",
+                            desc: "Notre équipe à la conquête des distances 21k et 42k.",
+                        },
+                        {
+                            title: "ICESCO Run",
+                            image: "/images/events/icesco.jpg",
+                            desc: "Promouvoir la paix et le patrimoine à travers la course.",
+                        },
+                    ],
+                },
             },
             {
                 role: "Responsable Cellule DevOps",

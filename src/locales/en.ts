@@ -295,6 +295,39 @@ export const en = {
                 period: "02/2025 - Present",
                 description:
                     "Founded the first student running community. Organized weekly runs to promote mental resilience and discipline—values I bring to engineering teams.",
+                details: {
+                    headline:
+                        "INPT Runners is the official running club of INPT, uniting students through the shared passion of movement, endurance, and progress.",
+                    description:
+                        "Whether you're sprinting, jogging, or just starting out — we run together, we grow together, we strive.",
+                    stats: {
+                        members: "94+ Strava Members",
+                        growth: "Growing Community",
+                    },
+                    subInitiative: {
+                        title: "She Runs INPT",
+                        description:
+                            "A dedicated space to empower women in sports and build confidence.",
+                        logo: "/images/sheruns-logo.png",
+                    },
+                    events: [
+                        {
+                            title: "Rabat RUN",
+                            image: "/images/events/rabat-run.jpg",
+                            desc: "A 5k community run taking over the streets of the capital.",
+                        },
+                        {
+                            title: "Intl. Marathon of Rabat",
+                            image: "/images/events/marathon.jpg",
+                            desc: "Our team conquering the 21k and 42k distances.",
+                        },
+                        {
+                            title: "ICESCO Run",
+                            image: "/images/events/icesco.jpg",
+                            desc: "Promoting peace and heritage through running.",
+                        },
+                    ],
+                },
             },
             {
                 role: "Head of DevOps Cell",

@@ -1,10 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Activity, Terminal, Sigma } from "lucide-react";
+import { Activity, Terminal, Sigma, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { prefix } from "@/lib/utils";
 import { useLanguage } from "@/context/language-context";
+import { LeadershipModal } from "@/components/leadership-modal";
 
 const sectionVariants = {
     hidden: { opacity: 0, y: 24 },
@@ -15,6 +17,15 @@ export function LeadershipSection() {
     const { content } = useLanguage();
     const leadership = content.leadership as any;
     const volunteering = (leadership.items as any[]) ?? [];
+
+    const [selectedItem, setSelectedItem] = useState<any | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleCardClick = (item: any) => {
+        if (!item?.details) return;
+        setSelectedItem(item);
+        setIsModalOpen(true);
+    };
 
     return (
         <motion.section
@@ -54,9 +65,11 @@ export function LeadershipSection() {
                     {volunteering.map((item) => (
                         <div
                             key={`${item.org}-${item.role}`}
-                            className={`flex flex-col rounded-2xl border bg-slate-950/60 p-4 text-sm text-slate-200 shadow-md shadow-slate-950/60 backdrop-blur-md transition-transform hover:-translate-y-1.5 hover:shadow-xl ${item.org.includes("INPT Runners")
-                                ? "border-teal-400/60 hover:border-teal-300/80 animate-pulse"
-                                : "border-amber-200/40 hover:border-amber-300/80 hover:shadow-amber-400/25"
+                            onClick={() => handleCardClick(item)}
+                            className={`flex flex-col rounded-2xl border bg-slate-950/60 p-4 text-sm text-slate-200 shadow-md shadow-slate-950/60 backdrop-blur-md transition-transform hover:-translate-y-1.5 hover:shadow-xl ${item.details ? "cursor-pointer hover:scale-[1.02]" : ""
+                                } ${item.org.includes("INPT Runners")
+                                    ? "border-teal-400/60 hover:border-teal-300/80 animate-pulse"
+                                    : "border-amber-200/40 hover:border-amber-300/80 hover:shadow-amber-400/25"
                                 }`}
                         >
                             {item.image && (
@@ -97,9 +110,26 @@ export function LeadershipSection() {
                             </div>
 
                             <p className="mt-3 text-xs text-slate-300">{item.description}</p>
+
+                            {item.details && (
+                                <div className="mt-3 inline-flex items-center gap-1 text-[0.7rem] font-medium text-teal-300">
+                                    <span>See impact</span>
+                                    <ArrowRight className="h-3 w-3" />
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>
+                {selectedItem?.details && (
+                    <LeadershipModal
+                        isOpen={isModalOpen}
+                        onClose={() => setIsModalOpen(false)}
+                        org={selectedItem.org}
+                        role={selectedItem.role}
+                        period={selectedItem.period}
+                        details={selectedItem.details}
+                    />
+                )}
             </div>
         </motion.section>
     );
