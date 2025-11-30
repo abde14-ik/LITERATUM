@@ -122,7 +122,7 @@ export function LeadershipSection() {
 
                                 {item.details && (
                                     <div className="pointer-events-none absolute right-3 top-3 z-10 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                                        <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-black/70 text-slate-100 shadow-sm shadow-black/60">
+                                        <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-black/70 text-white/20 shadow-sm shadow-black/60 group-hover:text-amber-300">
                                             <Maximize2 className="h-3 w-3" />
                                         </span>
                                     </div>
@@ -142,7 +142,7 @@ export function LeadershipSection() {
                                         </div>
                                     )}
 
-                                    <div className="flex items-start justify-between gap-2">
+                                    <div className="flex items-start gap-2">
                                         <div className="space-y-2">
                                             <p className="text-[0.65rem] font-mono uppercase tracking-[0.18em] text-gold">
                                                 {item.period} · {item.org}
@@ -151,18 +151,6 @@ export function LeadershipSection() {
                                                 {item.role}
                                             </h3>
                                         </div>
-                                        <span
-                                            className={`inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/80 ${item.org.includes("INPT Runners")
-                                                ? "text-violet-300"
-                                                : item.org.includes("CIT Club")
-                                                    ? "text-fuchsia-300"
-                                                    : "text-amber-300"
-                                                }`}
-                                        >
-                                            {item.org.includes("INPT Runners") && <Activity className="h-4 w-4" />}
-                                            {item.org.includes("CIT Club") && <Terminal className="h-4 w-4" />}
-                                            {item.org.includes("MSC") && <Sigma className="h-4 w-4" />}
-                                        </span>
                                     </div>
 
                                     <p className="mt-3 text-xs text-slate-300 line-clamp-3">{item.description}</p>
