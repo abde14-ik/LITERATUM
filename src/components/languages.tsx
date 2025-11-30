@@ -31,12 +31,12 @@ export function LanguagesSection() {
                 </p>
             </header>
 
-            <div className="rounded-2xl border border-teal-500/40 bg-slate-950/80 p-4">
+            <div className="rounded-2xl border border-violet-500/40 bg-slate-950/80 p-4">
                 <div className="mt-1 flex flex-wrap gap-2">
                     {langs.map((lang: string) => (
                         <span
                             key={lang}
-                            className="inline-flex items-center rounded-full border border-teal-500/40 bg-teal-500/10 px-3 py-1 text-xs font-medium text-teal-200"
+                            className="inline-flex items-center rounded-full border border-violet-500/40 bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-200"
                         >
                             {lang}
                         </span>

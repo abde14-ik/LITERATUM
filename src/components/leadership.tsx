@@ -68,7 +68,7 @@ export function LeadershipSection() {
                             onClick={() => handleCardClick(item)}
                             className={`flex flex-col rounded-2xl border bg-slate-950/60 p-4 text-sm text-slate-200 shadow-md shadow-slate-950/60 backdrop-blur-md transition-transform hover:-translate-y-1.5 hover:shadow-xl ${item.details ? "cursor-pointer hover:scale-[1.02]" : ""
                                 } ${item.org.includes("INPT Runners")
-                                    ? "border-teal-400/60 hover:border-teal-300/80 animate-pulse"
+                                    ? "border-violet-400/60 hover:border-violet-300/80 animate-pulse"
                                     : "border-amber-200/40 hover:border-amber-300/80 hover:shadow-amber-400/25"
                                 }`}
                         >
@@ -97,9 +97,9 @@ export function LeadershipSection() {
                                 </div>
                                 <span
                                     className={`inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/80 ${item.org.includes("INPT Runners")
-                                        ? "text-teal-300"
+                                        ? "text-violet-300"
                                         : item.org.includes("CIT Club")
-                                            ? "text-emerald-300"
+                                            ? "text-fuchsia-300"
                                             : "text-amber-300"
                                         }`}
                                 >
@@ -112,7 +112,7 @@ export function LeadershipSection() {
                             <p className="mt-3 text-xs text-slate-300">{item.description}</p>
 
                             {item.details && (
-                                <div className="mt-3 inline-flex items-center gap-1 text-[0.7rem] font-medium text-teal-300">
+                                <div className="mt-3 inline-flex items-center gap-1 text-[0.7rem] font-medium text-violet-300">
                                     <span>See impact</span>
                                     <ArrowRight className="h-3 w-3" />
                                 </div>

@@ -149,7 +149,7 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
                                         </div>
                                     )}
                                     <div className="space-y-1">
-                                        <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-teal-300">
+                                        <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-amber-300">
                                             Leadership Impact
                                         </p>
                                         <h2 className="text-xl font-semibold text-slate-50 sm:text-2xl">
@@ -192,18 +192,18 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
                                         stats.weeklyDistance ||
                                         stats.activities ||
                                         stats.platform) && (
-                                        <div className="mt-2 rounded-2xl border border-teal-500/40 bg-teal-900/10 px-3 py-3 text-xs sm:text-[0.8rem]">
+                                        <div className="mt-2 rounded-2xl border border-violet-500/40 bg-violet-900/10 px-3 py-3 text-xs sm:text-[0.8rem]">
                                             <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
                                                 {stats.members && (
-                                                    <div className="flex items-center gap-2 text-teal-200">
-                                                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-teal-500/15 text-teal-300">
+                                                    <div className="flex items-center gap-2 text-violet-200">
+                                                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-violet-500/15 text-violet-300">
                                                             <Users className="h-4 w-4" />
                                                         </span>
                                                         <div>
-                                                            <p className="text-[0.65rem] uppercase tracking-[0.18em] text-teal-200/80">
+                                                            <p className="text-[0.65rem] uppercase tracking-[0.18em] text-violet-200/80">
                                                                 Members
                                                             </p>
-                                                            <p className="text-xs font-semibold text-teal-50">
+                                                            <p className="text-xs font-semibold text-violet-50">
                                                                 {stats.members}
                                                             </p>
                                                         </div>
@@ -253,7 +253,7 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
                                             {isInptRunners && (
                                                 <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
                                                     {stats.platform && (
-                                                        <span className="text-[0.7rem] text-teal-100/90">
+                                                        <span className="text-[0.7rem] text-amber-200">
                                                             {stats.platform}
                                                         </span>
                                                     )}

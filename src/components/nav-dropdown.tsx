@@ -21,14 +21,14 @@ export function NavDropdown({ label, children }: NavDropdownProps) {
             <button
                 type="button"
                 onClick={() => setOpen((prev) => !prev)}
-                className="group inline-flex items-center gap-1 pb-1 text-sm font-medium text-slate-400 transition-colors hover:text-teal-300"
+                className="group inline-flex items-center gap-1 pb-1 text-sm font-medium text-slate-400 transition-colors hover:text-violet-300"
             >
                 <span>{label}</span>
                 <ChevronDown
                     size={14}
                     className={`transition-transform duration-200 ${open ? "rotate-180" : "rotate-0"}`}
                 />
-                <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 bg-gradient-to-r from-teal-400 to-cyan-400 transition-transform duration-200 group-hover:scale-x-100" />
+                <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 bg-gradient-to-r from-violet-400 to-amber-300 transition-transform duration-200 group-hover:scale-x-100" />
             </button>
 
             <AnimatePresence>

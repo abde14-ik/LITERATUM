@@ -76,7 +76,7 @@ export function HeroSection() {
                     <div className="flex flex-wrap items-center gap-3">
                         <a
                             href="#projects"
-                            className="inline-flex items-center gap-2 rounded-full bg-[#1DB954] px-5 py-2.5 text-sm font-semibold text-black shadow-lg shadow-black/40 transition hover:bg-[#1ed760]"
+                            className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gradient-to-r from-royal to-royalDark px-5 py-2.5 text-sm font-semibold text-slate-50 shadow-lg shadow-gold/30 transition hover:border-gold/70 hover:from-royalDark hover:to-royal"
                         >
                             <ArrowDownRight className="h-4 w-4" />
                             <span>{hero.ctaViewProjects}</span>

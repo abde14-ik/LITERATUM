@@ -54,14 +54,14 @@ export function BookshelfSection() {
 
             {selectedBook && (
                 <div className="mt-4 rounded-2xl border border-violet-600/40 bg-indigo-950/50 p-4 shadow-sm shadow-slate-950/40 backdrop-blur sm:p-5">
-                    <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-teal-300">
+                    <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-violet-300">
                         Book Insight
                     </p>
                     <h3 className="mt-1 font-serif text-sm font-semibold text-slate-100 sm:text-base">
                         {selectedBook.title}
                     </h3>
                     {selectedBook.theme && (
-                        <p className="mt-0.5 text-xs text-teal-200 sm:text-[0.8rem]">
+                        <p className="mt-0.5 text-xs text-violet-200 sm:text-[0.8rem]">
                             {selectedBook.theme}
                         </p>
                     )}

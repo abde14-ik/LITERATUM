@@ -53,7 +53,7 @@ export function AvatarModal({ isOpen, onClose, src, alt }: AvatarModalProps) {
                     >
                         <motion.div
                             layoutId="avatar-image"
-                            className="relative h-72 w-72 overflow-hidden rounded-full border-4 border-slate-800 shadow-2xl shadow-teal-500/20 md:h-96 md:w-96"
+                            className="relative h-72 w-72 overflow-hidden rounded-full border-4 border-slate-800 shadow-2xl shadow-violet-500/25 md:h-96 md:w-96"
                         >
                             <Image
                                 src={src}

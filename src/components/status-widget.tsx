@@ -16,7 +16,7 @@ export function StatusWidget() {
         >
             <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.9)]" />
+                    <span className="h-2 w-2 rounded-full bg-violet-500 shadow-[0_0_10px_rgba(139,92,246,0.9)]" />
                     <span className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-slate-300">
                         System Metrics
                     </span>
@@ -28,7 +28,7 @@ export function StatusWidget() {
 
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 <div className="flex items-center gap-2">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/80 text-teal-300">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/80 text-violet-300">
                         <Cloud className="h-4 w-4" />
                     </span>
                     <div className="space-y-0.5">
@@ -62,7 +62,7 @@ export function StatusWidget() {
                 </div>
 
                 <div className="flex items-center gap-2 sm:col-span-2">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/80 text-emerald-300">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/80 text-violet-300">
                         <Activity className="h-4 w-4" />
                     </span>
                     <div className="space-y-0.5">

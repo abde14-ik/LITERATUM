@@ -11,7 +11,7 @@ export function ScrollProgress() {
                 <div className="h-full w-px rounded-full bg-slate-800/70" />
                 <motion.div
                     style={{ scaleY: scrollYProgress }}
-                    className="absolute inset-x-0 bottom-0 origin-bottom rounded-full bg-gradient-to-b from-teal-400 via-cyan-400 to-amber-300"
+                    className="absolute inset-x-0 bottom-0 origin-bottom rounded-full bg-gradient-to-b from-violet-500 via-fuchsia-400 to-amber-300"
                 />
             </div>
         </div>
