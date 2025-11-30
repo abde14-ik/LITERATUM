@@ -72,22 +72,8 @@ export function LeadershipSection() {
             </header>
 
             <div className="rounded-3xl border border-amber-400/50 bg-gradient-to-br from-amber-500/10 via-slate-950/90 to-slate-950/95 p-5 shadow-[0_0_40px_rgba(248,250,252,0.06)] backdrop-blur-xl">
-                <div className="flex items-center justify-between gap-3">
-                    <div className="space-y-1">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
-                            {leadership.humanSideLabel}
-                        </p>
-                        <h3 className="text-sm font-semibold text-slate-50 sm:text-base">
-                            {leadership.humanSideTitle}
-                        </h3>
-                    </div>
-                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-amber-500/15 text-amber-300">
-                        <Activity className="h-4 w-4" />
-                    </span>
-                </div>
-
                 <motion.div
-                    className="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-3"
+                    className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-3"
                     variants={cardsContainerVariants}
                 >
                     {volunteering.map((item) => {
