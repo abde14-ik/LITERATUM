@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/hero";
 import { AboutSection } from "@/components/about";
+import { LanguagesSection } from "@/components/languages";
 import { EducationSection } from "@/components/education";
 import { ExperienceSection } from "@/components/experience";
 import { ProjectsSection } from "@/components/projects";
@@ -16,6 +17,7 @@ export default function Home() {
     <div className="space-y-12 sm:space-y-16">
       <HeroSection />
       <AboutSection />
+      <LanguagesSection />
       <EducationSection />
       <ExperienceSection />
       <ProjectsSection />
