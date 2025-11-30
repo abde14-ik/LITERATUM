@@ -412,7 +412,7 @@ export const en = {
                         "MSC gathers mathematics and science enthusiasts at INPT to foster critical thinking through competitions, conferences, and creative problem-solving.",
                     description:
                         "As Vice President, I bridged the gap between abstract math and community engagement, managing operations and leading the club's visual identity.",
-                    featureImage: "/images/events/msc-main.jpg",
+                    featureImage: "/images/msc-main.jpg",
                     logo: "/images/msc.png",
                     stats: {
                         role: "Vice President",

@@ -413,7 +413,7 @@ export const fr = {
                         "Le MSC rassemble les passionnés de mathématiques et de sciences à l'INPT pour cultiver l'esprit critique à travers des événements et conférences.",
                     description:
                         "En tant que Vice-Président, j'ai géré les opérations et dirigé l'identité visuelle du club, reliant les mathématiques abstraites à l'engagement communautaire.",
-                    featureImage: "/images/events/msc-main.jpg",
+                    featureImage: "/images/msc-main.jpg",
                     logo: "/images/msc.png",
                     stats: {
                         role: "Vice-Président",
