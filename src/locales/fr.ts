@@ -311,7 +311,7 @@ export const fr = {
                         title: "She Runs INPT",
                         description:
                             "Un espace dédié pour encourager les femmes dans le sport et renforcer la confiance.",
-                        logo: "/images/events/sheruns-logo.png",
+                        logo: "/images/sheruns-logo.png",
                     },
                     events: [
                         {

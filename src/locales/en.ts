@@ -308,7 +308,7 @@ export const en = {
                         title: "She Runs INPT",
                         description:
                             "A dedicated space to empower women in sports and build confidence.",
-                        logo: "/images/events/sheruns-logo.png",
+                        logo: "/images/sheruns-logo.png",
                     },
                     events: [
                         {

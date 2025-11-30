@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { Users, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Users, X } from "lucide-react";
 import { prefix } from "@/lib/utils";
 
 export type LeadershipDetails = {
@@ -38,6 +38,8 @@ export type LeadershipModalProps = {
 export function LeadershipModal({ isOpen, onClose, org, role, period, details }: LeadershipModalProps) {
     const [mounted, setMounted] = useState(false);
     const [imageIndex, setImageIndex] = useState(0);
+    const [activeEventIndex, setActiveEventIndex] = useState<number | null>(null);
+    const [lightboxIndex, setLightboxIndex] = useState(0);
 
     useEffect(() => {
         setMounted(true);
@@ -55,142 +57,291 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, details }:
 
     const { headline, description, stats, subInitiative, events } = details;
 
+    const openEventLightbox = (eventIndex: number, startIndex: number = 0) => {
+        setActiveEventIndex(eventIndex);
+        setLightboxIndex(startIndex);
+    };
+
+    const closeEventLightbox = () => {
+        setActiveEventIndex(null);
+    };
+
+    const handleNextImage = () => {
+        if (!events || activeEventIndex === null) return;
+        const images = events[activeEventIndex]?.images ?? [];
+        if (!images.length) return;
+        setLightboxIndex((prev) => (prev + 1) % images.length);
+    };
+
+    const handlePrevImage = () => {
+        if (!events || activeEventIndex === null) return;
+        const images = events[activeEventIndex]?.images ?? [];
+        if (!images.length) return;
+        setLightboxIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
+
+    const activeEvent = events && activeEventIndex !== null ? events[activeEventIndex] : null;
+    const activeImages = activeEvent?.images ?? [];
+    const totalImages = activeImages.length;
+    const safeLightboxIndex =
+        totalImages > 0 ? ((lightboxIndex % totalImages) + totalImages) % totalImages : 0;
+    const currentLightboxSrc = totalImages > 0 ? activeImages[safeLightboxIndex] : undefined;
+
     return createPortal(
-        <AnimatePresence>
-            {isOpen && (
-                <motion.div
-                    className="fixed inset-0 z-[90] flex items-center justify-center bg-black/80 backdrop-blur-md"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    onClick={onClose}
-                >
+        <>
+            <AnimatePresence>
+                {isOpen && (
                     <motion.div
-                        className="relative mx-4 flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-3xl border border-slate-700/70 bg-slate-900/95 p-5 text-slate-100 shadow-2xl shadow-black/70 sm:p-7"
-                        initial={{ scale: 0.96, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        exit={{ scale: 0.96, opacity: 0 }}
-                        transition={{ duration: 0.2, ease: "easeOut" }}
-                        onClick={(event) => event.stopPropagation()}
+                        className="fixed inset-0 z-[90] flex items-center justify-center bg-black/80 backdrop-blur-md"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={onClose}
                     >
-                        <button
-                            type="button"
-                            onClick={onClose}
-                            className="absolute right-4 top-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/80 text-slate-200 shadow-md shadow-black/60 transition hover:bg-slate-800/90"
-                            aria-label="Close leadership details"
+                        <motion.div
+                            className="relative mx-4 flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-3xl border border-slate-700/70 bg-slate-900/95 p-5 text-slate-100 shadow-2xl shadow-black/70 sm:p-7"
+                            initial={{ scale: 0.96, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.96, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                            onClick={(event) => event.stopPropagation()}
                         >
-                            <X className="h-4 w-4" />
-                        </button>
+                            <button
+                                type="button"
+                                onClick={onClose}
+                                className="absolute right-4 top-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/80 text-slate-200 shadow-md shadow-black/60 transition hover:bg-slate-800/90"
+                                aria-label="Close leadership details"
+                            >
+                                <X className="h-4 w-4" />
+                            </button>
 
-                        <header className="mb-4 space-y-1 pr-10">
-                            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-teal-300">
-                                Leadership Impact
-                            </p>
-                            <h2 className="text-xl font-semibold text-slate-50 sm:text-2xl">{org}</h2>
-                            <p className="text-xs text-slate-300 sm:text-sm">
-                                {role}
-                                {period ? ` · ${period}` : null}
-                            </p>
-                        </header>
+                            <header className="mb-4 space-y-1 pr-10">
+                                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-teal-300">
+                                    Leadership Impact
+                                </p>
+                                <h2 className="text-xl font-semibold text-slate-50 sm:text-2xl">
+                                    {org}
+                                </h2>
+                                <p className="text-xs text-slate-300 sm:text-sm">
+                                    {role}
+                                    {period ? ` · ${period}` : null}
+                                </p>
+                            </header>
 
-                        <section className="space-y-4 overflow-y-auto pr-1">
-                            {headline && (
-                                <p className="text-sm font-medium text-slate-100 sm:text-base">{headline}</p>
-                            )}
+                            <section className="space-y-4 overflow-y-auto pr-1">
+                                {headline && (
+                                    <p className="text-sm font-medium text-slate-100 sm:text-base">
+                                        {headline}
+                                    </p>
+                                )}
 
-                            {description && (
-                                <p className="text-xs text-slate-300 sm:text-sm">{description}</p>
-                            )}
+                                {description && (
+                                    <p className="text-xs text-slate-300 sm:text-sm">
+                                        {description}
+                                    </p>
+                                )}
 
-                            {stats && (stats.members || stats.growth) && (
-                                <div className="mt-2 flex flex-wrap items-center gap-3 rounded-2xl border border-teal-500/40 bg-teal-900/10 px-3 py-2 text-xs sm:text-[0.8rem]">
-                                    <div className="flex items-center gap-2 text-teal-300">
-                                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-teal-500/15">
-                                            <Users className="h-4 w-4" />
-                                        </span>
-                                        <span className="font-semibold">{stats.members}</span>
-                                    </div>
-                                    {stats.growth && (
-                                        <span className="rounded-full bg-slate-900/70 px-2 py-1 text-[0.7rem] text-teal-200">
-                                            {stats.growth}
-                                        </span>
-                                    )}
-                                </div>
-                            )}
-
-                            {subInitiative && (
-                                <div className="mt-3 flex flex-col gap-3 rounded-2xl border border-pink-500/60 bg-pink-950/20 p-3 sm:p-4">
-                                    <div className="flex items-center gap-3">
-                                        {subInitiative.logo ? (
-                                            <div className="relative h-10 w-10 overflow-hidden rounded-full bg-pink-500/20">
-                                                <Image
-                                                    src={prefix(subInitiative.logo)}
-                                                    alt={subInitiative.title}
-                                                    fill
-                                                    className="object-contain p-1.5"
-                                                    sizes="40px"
-                                                />
-                                            </div>
-                                        ) : (
-                                            <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-pink-500/20 text-pink-300">
-                                                <Users className="h-5 w-5" />
-                                            </div>
+                                {stats && (stats.members || stats.growth) && (
+                                    <div className="mt-2 flex flex-wrap items-center gap-3 rounded-2xl border border-teal-500/40 bg-teal-900/10 px-3 py-2 text-xs sm:text-[0.8rem]">
+                                        <div className="flex items-center gap-2 text-teal-300">
+                                            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-teal-500/15">
+                                                <Users className="h-4 w-4" />
+                                            </span>
+                                            <span className="font-semibold">{stats.members}</span>
+                                        </div>
+                                        {stats.growth && (
+                                            <span className="rounded-full bg-slate-900/70 px-2 py-1 text-[0.7rem] text-teal-200">
+                                                {stats.growth}
+                                            </span>
                                         )}
-                                        <div>
-                                            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">
-                                                Sub-initiative
+                                    </div>
+                                )}
+
+                                {subInitiative && (
+                                    <div className="mt-3 flex flex-col gap-3 rounded-2xl border border-pink-500/60 bg-pink-950/20 p-3 sm:p-4">
+                                        <div className="flex items-center gap-3">
+                                            {subInitiative.logo ? (
+                                                <div className="relative h-10 w-10 overflow-hidden rounded-full bg-pink-500/20">
+                                                    <Image
+                                                        src={prefix(subInitiative.logo)}
+                                                        alt={subInitiative.title}
+                                                        fill
+                                                        className="object-contain p-1.5"
+                                                        sizes="40px"
+                                                    />
+                                                </div>
+                                            ) : (
+                                                <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-pink-500/20 text-pink-300">
+                                                    <Users className="h-5 w-5" />
+                                                </div>
+                                            )}
+                                            <div>
+                                                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">
+                                                    Sub-initiative
+                                                </p>
+                                                <h3 className="text-sm font-semibold text-slate-50">
+                                                    {subInitiative.title}
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        {subInitiative.description && (
+                                            <p className="text-xs text-pink-100/90 sm:text-[0.8rem]">
+                                                {subInitiative.description}
                                             </p>
-                                            <h3 className="text-sm font-semibold text-slate-50">{subInitiative.title}</h3>
+                                        )}
+                                    </div>
+                                )}
+
+                                {events && events.length > 0 && (
+                                    <div className="mt-4 space-y-2">
+                                        <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-slate-400">
+                                            Events
+                                        </p>
+                                        <div className="grid gap-3 md:grid-cols-3">
+                                            {events.map((event, index) => (
+                                                <article
+                                                    key={`${event.title}-${index}`}
+                                                    className="flex flex-col overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-900/80 text-xs text-slate-200 shadow-sm shadow-black/50 cursor-pointer"
+                                                    role="button"
+                                                    tabIndex={0}
+                                                    aria-label={`Open photos for ${event.title}`}
+                                                    onClick={() => {
+                                                        const startIndex =
+                                                            event.images && event.images.length > 0
+                                                                ? imageIndex % event.images.length
+                                                                : 0;
+                                                        openEventLightbox(index, startIndex);
+                                                    }}
+                                                    onKeyDown={(eventKey) => {
+                                                        if (eventKey.key === "Enter" || eventKey.key === " ") {
+                                                            eventKey.preventDefault();
+                                                            const startIndex =
+                                                                event.images && event.images.length > 0
+                                                                    ? imageIndex % event.images.length
+                                                                    : 0;
+                                                            openEventLightbox(index, startIndex);
+                                                        }
+                                                    }}
+                                                >
+                                                    {event.images && event.images.length > 0 ? (
+                                                        <div className="relative aspect-video w-full overflow-hidden">
+                                                            <Image
+                                                                src={prefix(
+                                                                    event.images[
+                                                                    imageIndex % event.images.length
+                                                                    ],
+                                                                )}
+                                                                alt={event.title}
+                                                                fill
+                                                                className="object-cover object-top transition-opacity duration-500"
+                                                                sizes="(min-width: 768px) 200px, 100vw"
+                                                            />
+                                                        </div>
+                                                    ) : (
+                                                        <div className="flex aspect-video items-center justify-center bg-slate-800/80 text-[0.7rem] text-slate-300">
+                                                            {event.title}
+                                                        </div>
+                                                    )}
+                                                    <div className="space-y-1 p-3">
+                                                        <h4 className="text-[0.8rem] font-semibold text-slate-50">
+                                                            {event.title}
+                                                        </h4>
+                                                        {event.desc && (
+                                                            <p className="text-[0.7rem] text-slate-300 line-clamp-3">
+                                                                {event.desc}
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                </article>
+                                            ))}
                                         </div>
                                     </div>
-                                    {subInitiative.description && (
-                                        <p className="text-xs text-pink-100/90 sm:text-[0.8rem]">{subInitiative.description}</p>
+                                )}
+                            </section>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            <AnimatePresence>
+                {activeEvent && totalImages > 0 && (
+                    <motion.div
+                        className="fixed inset-0 z-[95] flex items-center justify-center bg-black/90 backdrop-blur-md"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={closeEventLightbox}
+                    >
+                        <motion.div
+                            className="relative mx-4 w-full max-w-4xl"
+                            initial={{ scale: 0.96, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.96, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                            onClick={(event) => event.stopPropagation()}
+                        >
+                            <button
+                                type="button"
+                                onClick={closeEventLightbox}
+                                className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-black/70 text-slate-200 shadow-md shadow-black/80 transition hover:bg-black/90"
+                                aria-label="Close event photos"
+                            >
+                                <X className="h-4 w-4" />
+                            </button>
+
+                            <div className="space-y-3 pt-10">
+                                <div className="relative mx-auto flex w-full max-w-3xl items-center justify-center">
+                                    <button
+                                        type="button"
+                                        onClick={handlePrevImage}
+                                        className="absolute left-0 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full bg-black/70 text-slate-100 shadow-md shadow-black/80 transition hover:bg-black/90"
+                                        aria-label="Previous photo"
+                                    >
+                                        <ChevronLeft className="h-4 w-4" />
+                                    </button>
+                                    <div className="relative mx-10 aspect-[16/10] w-full max-h-[70vh] overflow-hidden rounded-2xl bg-black">
+                                        {currentLightboxSrc && (
+                                            <Image
+                                                src={prefix(currentLightboxSrc)}
+                                                alt={activeEvent.title}
+                                                fill
+                                                className="object-contain"
+                                                sizes="(min-width: 768px) 960px, 100vw"
+                                            />
+                                        )}
+                                    </div>
+                                    <button
+                                        type="button"
+                                        onClick={handleNextImage}
+                                        className="absolute right-0 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full bg-black/70 text-slate-100 shadow-md shadow-black/80 transition hover:bg-black/90"
+                                        aria-label="Next photo"
+                                    >
+                                        <ChevronRight className="h-4 w-4" />
+                                    </button>
+                                </div>
+                                <div className="flex items-center justify-between px-2 text-xs text-slate-200 sm:text-sm">
+                                    <div className="space-y-0.5">
+                                        <p className="font-medium text-slate-50">
+                                            {activeEvent.title}
+                                        </p>
+                                        {activeEvent.desc && (
+                                            <p className="text-[0.7rem] text-slate-300 sm:text-xs">
+                                                {activeEvent.desc}
+                                            </p>
+                                        )}
+                                    </div>
+                                    {totalImages > 1 && (
+                                        <p className="text-[0.7rem] text-slate-400">
+                                            {safeLightboxIndex + 1} / {totalImages}
+                                        </p>
                                     )}
                                 </div>
-                            )}
-
-                            {events && events.length > 0 && (
-                                <div className="mt-4 space-y-2">
-                                    <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-slate-400">
-                                        Events
-                                    </p>
-                                    <div className="grid gap-3 md:grid-cols-3">
-                                        {events.map((event, index) => (
-                                            <article
-                                                key={`${event.title}-${index}`}
-                                                className="flex flex-col overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-900/80 text-xs text-slate-200 shadow-sm shadow-black/50"
-                                            >
-                                                {event.images && event.images.length > 0 ? (
-                                                    <div className="relative aspect-video w-full overflow-hidden">
-                                                        <Image
-                                                            src={prefix(event.images[imageIndex % event.images.length])}
-                                                            alt={event.title}
-                                                            fill
-                                                            className="object-cover object-top transition-opacity duration-500"
-                                                            sizes="(min-width: 768px) 200px, 100vw"
-                                                        />
-                                                    </div>
-                                                ) : (
-                                                    <div className="flex aspect-video items-center justify-center bg-slate-800/80 text-[0.7rem] text-slate-300">
-                                                        {event.title}
-                                                    </div>
-                                                )}
-                                                <div className="space-y-1 p-3">
-                                                    <h4 className="text-[0.8rem] font-semibold text-slate-50">{event.title}</h4>
-                                                    {event.desc && (
-                                                        <p className="text-[0.7rem] text-slate-300 line-clamp-3">{event.desc}</p>
-                                                    )}
-                                                </div>
-                                            </article>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-                        </section>
+                            </div>
+                        </motion.div>
                     </motion.div>
-                </motion.div>
-            )}
-        </AnimatePresence>,
+                )}
+            </AnimatePresence>
+        </>,
         document.body,
     );
 }
