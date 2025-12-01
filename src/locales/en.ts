@@ -239,8 +239,9 @@ export const en = {
                 name: "BoardGameListing - CI/CD & K8s",
                 subtitle: "Spring CI/CD & Kubernetes Delivery Pipeline",
                 desc: "Full CI/CD pipeline for a Spring Boot app using Jenkins, Kubernetes on AWS EC2, SonarQube, and Trivy.",
+                githubUrl: "https://github.com/abde14-ik/BoardGameListing---CI-CD-K8s",
                 tech: ["Jenkins", "Kubernetes", "AWS EC2", "SonarQube", "Trivy"],
-                codeUrl: "", // TODO: insert GitHub link
+                codeUrl: "https://github.com/abde14-ik/BoardGameListing---CI-CD-K8s",
                 liveUrl: undefined,
                 image: undefined,
             },
@@ -248,8 +249,9 @@ export const en = {
                 name: "Local RAG Microservices",
                 subtitle: "Local LLM RAG Microservices",
                 desc: "Offline document Q&A system using local LLMs with Python, FastAPI, LangChain, Ollama, Docker, and Terraform.",
+                githubUrl: "https://github.com/abde14-ik/Local-RAG-Microservices",
                 tech: ["Python", "FastAPI", "LangChain", "Ollama", "Docker", "Terraform"],
-                codeUrl: "", // TODO: insert GitHub link
+                codeUrl: "https://github.com/abde14-ik/Local-RAG-Microservices",
                 liveUrl: undefined,
                 image: undefined,
             },
@@ -257,8 +259,9 @@ export const en = {
                 name: "Azure Pet Store",
                 subtitle: "Azure Cloud-Native Reference App",
                 desc: "N-tier microservices architecture on Azure using Azure DevOps, AKS, Bicep, and Azure Functions.",
+                githubUrl: "https://github.com/abde14-ik/Azure-Pet-Store",
                 tech: ["Azure DevOps", "AKS", "Bicep", "Azure Functions"],
-                codeUrl: "", // TODO: insert GitHub link
+                codeUrl: "https://github.com/abde14-ik/Azure-Pet-Store",
                 liveUrl: undefined,
                 image: undefined,
             },
@@ -266,8 +269,9 @@ export const en = {
                 name: "Readers Haven",
                 subtitle: "Microservices & Observability Platform",
                 desc: "Collaboratively built a full-stack microservices app with React and Node.js, orchestrated via Kubernetes with a full monitoring stack (Prometheus/Grafana) and a secure API Gateway pattern.",
+                githubUrl: "https://github.com/Aymane27-Rio/readers-haven",
                 tech: ["React", "Node.js", "Kubernetes", "Prometheus", "Grafana", "MongoDB"],
-                codeUrl: "", // TODO: insert GitHub link
+                codeUrl: "https://github.com/Aymane27-Rio/readers-haven",
                 liveUrl: undefined,
                 image: undefined,
             },
@@ -275,8 +279,9 @@ export const en = {
                 name: "3-Tier DevOps CI/CD Pipeline",
                 subtitle: "Automated Secure Cloud Deployment",
                 desc: "Built a robust Jenkins pipeline for a 3-tier application, integrating DevSecOps tools (SonarQube, Trivy) and automating deployment to AWS EKS using Helm and dynamic infrastructure.",
+                githubUrl: "https://github.com/abde14-ik/3-Tier-DevOps-CI-CD-Pipeline",
                 tech: ["Jenkins", "AWS EKS", "Docker", "SonarQube", "Trivy", "Helm"],
-                codeUrl: "", // TODO: insert GitHub link
+                codeUrl: "https://github.com/abde14-ik/3-Tier-DevOps-CI-CD-Pipeline",
                 liveUrl: undefined,
                 image: undefined, // TODO: point to pipeline diagram in /public/projects if available
             },
