@@ -116,7 +116,7 @@ export function ChallengeModal({ isOpen, onClose }: ChallengeModalProps) {
 
         pyodide.setStdout({
             batched: (msg: string) => {
-                if (msg.includes("SUCCESS: You successfully recreated the K8s HPA logic")) {
+                if (msg.includes("SUCCESS: Pacing strategy optimized.")) {
                     sawSuccess = true;
                 }
                 setOutput((prev) => prev + msg + "\n");
@@ -125,28 +125,27 @@ export function ChallengeModal({ isOpen, onClose }: ChallengeModalProps) {
 
         const userCode = code;
         const testHarness = `
-import math
-
 try:
-    # Test Case 1: Scale Up
-    # 10 pods, usage is 200 (target 100). Should scale to 20.
-    assert calculate_replicas(10, 200, 100) == 20
-    print("✅ Test 1 Passed: Scale Up")
+    # Test Case: 3km in 30 mins
+    # Logic: x + 0.99x + 0.9801x = 30
+    # x (base pace) should be approx 10.1, 10.0, 9.9
 
-    # Test Case 2: Scale Down
-    # 10 pods, usage is 50 (target 100). Should scale to 5.
-    assert calculate_replicas(10, 50, 100) == 5
-    print("✅ Test 2 Passed: Scale Down")
+    splits = calculate_pacing(3, 30)
 
-    # Test Case 3: Ceiling (Round Up)
-    # 2 pods, usage 90 (target 50). Ratio 1.8 -> Should scale to 4 (2 * 1.8 = 3.6 -> ceil -> 4)
-    assert calculate_replicas(2, 90, 50) == 4
-    print("✅ Test 3 Passed: Ceiling Logic")
+    total_time = sum(splits)
+    print(f"Your Splits: {splits}")
+    print(f"Total Time: {total_time}")
 
-    print("🎉 SUCCESS: You successfully recreated the K8s HPA logic!")
+    # Check 1: Is the total time correct? (Allow tiny float margin)
+    assert abs(total_time - 30) < 0.5, f"Total time {total_time} does not match target 30"
 
-except AssertionError:
-    print("❌ FAILED: The calculation didn't match the K8s formula.")
+    # Check 2: Is it getting faster? (Negative Split)
+    assert splits[1] < splits[0], "You are slowing down! We need a Negative Split."
+
+    print("✅ SUCCESS: Pacing strategy optimized.")
+
+except AssertionError as e:
+    print(f"❌ STRATEGY FAILED: {e}")
 except Exception as e:
     print(f"⚠️ ERROR: {e}")
 `;
@@ -235,17 +234,19 @@ except Exception as e:
                                         <p className="font-semibold text-slate-200">Constraints &amp; Hints</p>
                                         <ul className="list-disc space-y-1 pl-4">
                                             <li>
-                                                <code>current_pods</code> is the current number of replicas.
+                                                <code>distance</code> is in kilometers (e.g. 3, 10, 42.195).
                                             </li>
                                             <li>
-                                                <code>current_metrics</code> is the current CPU usage (e.g. in millicores or ms).
+                                                <code>target_time</code> is the total race time in minutes.
                                             </li>
                                             <li>
-                                                <code>target_metrics</code> is the target CPU usage.
+                                                Your function should return a list of split times, one per kilometer.
                                             </li>
                                             <li>
-                                                Use the HPA-style formula:
-                                                <code>desired = ceil(current_pods * current_metrics / target_metrics)</code>.
+                                                Each km should be ~1% faster than the previous one (Negative Split).
+                                            </li>
+                                            <li>
+                                                The sum of all splits should be very close to <code>target_time</code>.
                                             </li>
                                         </ul>
                                     </div>

@@ -542,18 +542,18 @@ export const en = {
     },
     challenge: {
         heading: "Weekly Engineering Challenge",
-        subheading: "Recreate the logic behind the Kubernetes HPA.",
-        problemTitle: "The Autoscaler Algorithm",
+        subheading: "Help me optimize my next marathon.",
+        problemTitle: "The Negative Split Optimizer",
         description:
-            "Kubernetes scales pods based on usage. Implement a function that calculates the 'desired replicas' based on current CPU usage vs. target usage.",
-        exampleInput: "current_pods=10, current_cpu=200ms, target_cpu=100ms",
-        exampleOutput: "Output: 20 (Double the pods)",
+            "Fun Fact: I logged 846km this year. To break a record, I use a 'Negative Split' strategy (running the second half faster than the first). Write a function that takes a total distance and target time, then calculates the split times where each km is 1% faster than the previous one.",
+        exampleInput: "distance=10km, target_time=60min",
+        exampleOutput: "Output: [6.30, 6.24, 6.17, ...]",
         defaultCode:
-            "import math\n\ndef calculate_replicas(current_pods, current_metrics, target_metrics):\n    # Formula: current * (current_usage / target_usage)\n    # Tip: Don't forget to round up (ceil)!\n    return 0",
-        runButton: "Scale Cluster",
-        outputLabel: "Scheduler Output",
-        successMessage: "Scaling Successful! ⚖️ Cluster stabilized.",
-        failureMessage: "Calculation Error. Pods crashed.",
+            "def calculate_pacing(distance, target_time):\n    # Challenge: Generate a list of times (in minutes)\n    # where each km is 1% faster than the previous one.\n    # Total sum must equal target_time.\n    return []",
+        runButton: "Simulate Race",
+        outputLabel: "Race Telemetry",
+        successMessage: "New PR Achieved! 🏃‍♂️💨 Logic validated.",
+        failureMessage: "Pace miscalculation. DNF (Did Not Finish).",
     },
     contact: {
         heading: "Let's automate the future together.",
