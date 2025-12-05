@@ -545,7 +545,7 @@ export const en = {
         subheading: "Help me optimize my next marathon.",
         problemTitle: "The Negative Split Optimizer",
         description:
-            "Fun Fact: I logged 846km this year. To break a record, I use a 'Negative Split' strategy (running the second half faster than the first). Write a function that takes a total distance and target time, then calculates the split times where each km is 1% faster than the previous one.",
+            "Fun Fact: I logged 853.3 km this year. To break a record, I use a 'Negative Split' strategy (running the second half faster than the first). Write a function that takes a total distance and target time, then calculates the split times where each km is 1% faster than the previous one.",
         exampleInput: "distance=10km, target_time=60min",
         exampleOutput: "Output: [6.30, 6.24, 6.17, ...]",
         defaultCode:

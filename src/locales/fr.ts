@@ -553,7 +553,7 @@ export const fr = {
         subheading: "Aidez-moi à optimiser mon prochain marathon.",
         problemTitle: "L'Optimiseur de Negative Split",
         description:
-            "Fun Fact : J'ai couru 846km cette année. Pour battre un record, j'utilise le 'Negative Split' (courir la 2ème moitié plus vite que la 1ère). Écrivez une fonction qui calcule les temps de passage où chaque km est 1% plus rapide que le précédent.",
+            "Fun Fact : J'ai couru 853,3 km cette année. Pour battre un record, j'utilise le 'Negative Split' (courir la 2ème moitié plus vite que la 1ère). Écrivez une fonction qui calcule les temps de passage où chaque km est 1% plus rapide que le précédent.",
         exampleInput: "distance=10km, temps_cible=60min",
         exampleOutput: "Sortie: [6.30, 6.24, 6.17, ...]",
         defaultCode:
