@@ -69,7 +69,7 @@ export function AvatarModal({ isOpen, onClose, src, alt }: AvatarModalProps) {
                                 target="_blank"
                                 rel="noreferrer"
                                 className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/90 text-slate-100 shadow-sm shadow-black/50 transition hover:bg-slate-800/90"
-                                aria-label={content.contact.info.linkedinLabel}
+                                aria-label="LinkedIn"
                             >
                                 <Linkedin className="h-4 w-4" />
                             </a>
@@ -78,7 +78,7 @@ export function AvatarModal({ isOpen, onClose, src, alt }: AvatarModalProps) {
                                 target="_blank"
                                 rel="noreferrer"
                                 className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/90 text-slate-100 shadow-sm shadow-black/50 transition hover:bg-slate-800/90"
-                                aria-label={content.contact.info.githubLabel}
+                                aria-label="GitHub"
                             >
                                 <Github className="h-4 w-4" />
                             </a>

@@ -350,5 +350,5 @@ export const fr = {
         owner: "LITERATUM",
         rights: "Tous droits réservés.",
         builtBy: "Conçu & construit par",
-    },
+    }
 } as const;
