@@ -13,7 +13,7 @@ const sectionVariants = {
 export function AboutSection() {
     const { content } = useLanguage();
     const typedContent = content as typeof en;
-    const about = typedContent.aboutClub ?? typedContent.about;
+    const about = typedContent.aboutClub;
 
     return (
         <motion.section
