@@ -1,26 +1,20 @@
 export const en = {
     nav: {
         home: "Index",
-        about: "About the Club",
-        education: "Education",
+        about: "Prologue",
         skills: "The Lexicon",
-        experience: "Experience",
         projects: "Ex Libris",
-        leadership: "Leadership",
         contact: "Contact",
-        githubAria: "GitHub profile",
-        linkedinAria: "LinkedIn profile",
-        stravaAria: "Strava profile",
     },
     navbar: {
         items: [
             { id: "hero", label: "Index" },
+            { id: "about", label: "Prologue" },
             { id: "inkwell", label: "The Inkwell" },
-            { id: "about", label: "About the Club" },
             { id: "projects", label: "Ex Libris" },
             { id: "skills", label: "The Lexicon" },
         ],
-        about: "About the Club",
+        about: "Prologue",
         skills: "The Lexicon",
         projects: "Ex Libris",
         contact: "Contact",
@@ -84,32 +78,9 @@ export const en = {
             training: "Training",
         },
     },
-    about: {
-        heading: "About Me",
-        subheading:
-            "An engineering mindset grounded in automation and reliability, with a human side shaped by community, curiosity, and long-form reading.",
-        engineeringTitle: "Engineering Profile",
-        profileTitle: "Engineering Profile",
-        profileItems: [
-            "Cloud & DevOps engineer / student at [Your University/Role] specializing in distributed systems, cloud, and IoT.",
-            "Passionate about automation, Infrastructure as Code (IaC), and building reliable cloud-native platforms.",
-            "Comfortable with major cloud providers, Kubernetes, CI/CD pipelines, and observability tooling.",
-        ],
-        beyondCodeTitle: "Beyond the Code",
-        beyondTitle: "Beyond the Code",
-        beyondItems: [
-            "Founder of a student community initiative focused on discipline, consistency, and wellbeing.",
-            "Curious reader interested in technology, leadership, and personal growth.",
-            "Enjoy building communities and initiatives where people can grow together beyond the classroom.",
-        ],
-        languagesTitle: "Languages",
-        languagesSubtitle: "Multilingual communication",
-        languagesList: ["English", "French", "Arabic", "Tamazight"],
-    },
     aboutClub: {
-        heading: "About the Club",
-        subheading:
-            "LITERATUM was founded within the walls of INPT to provide a sanctuary for thought amidst the noise of technology. We are a collective of engineers, thinkers, and dreamers dedicated to the written word.",
+        heading: "The Prologue",
+        subheading: "A sanctuary for thought, ink, and deliberate conversation. LITERATUM gathers readers who prize slow pages, generous margins, and the quiet craft of reflection.",
         engineeringTitle: "What the club is",
         profileTitle: "What the club is",
         profileItems: [
@@ -155,16 +126,6 @@ export const en = {
                 items: ["Alienation", "Faith & Doubt", "City as Character", "Memory"],
             },
         ],
-    },
-    education: {
-        heading: "",
-        subheading: "",
-        items: [],
-    },
-    experience: {
-        heading: "",
-        subheading: "",
-        items: [],
     },
     archives: {
         heading: "Ex Libris",
@@ -212,13 +173,6 @@ export const en = {
             },
         ],
     },
-    leadership: {
-        heading: "",
-        subheading: "",
-        humanSideLabel: "",
-        humanSideTitle: "",
-        items: [],
-    },
     library: {
         heading: "Intellectual Foundations",
         tagline: "Spoken words fly, written words remain.",
@@ -231,7 +185,7 @@ export const en = {
                 synopsis:
                     "Fromm argues that love is not a vague sentiment, but an art requiring discipline, concentration, and patience to master.",
                 connection: "Applying this same active discipline and care to team dynamics and code ownership.",
-                curator: "IKBI Abdelilah",
+                curator: "Curator",
             },
             {
                 title: "Man for Himself",
@@ -241,7 +195,7 @@ export const en = {
                 synopsis:
                     "An inquiry into the psychology of ethics, arguing that our highest virtue is to be true to our own nature (productivity).",
                 connection: "Grounding engineering decisions in integrity rather than just following metrics.",
-                curator: "IKBI Abdelilah",
+                curator: "Curator",
             },
             {
                 title: "The Art of Being",
@@ -251,7 +205,7 @@ export const en = {
                 synopsis:
                     "A guide to functioning fully in a distracted world through the practice of mindfulness and overcoming illusions.",
                 connection: "Bringing deep focus (Flow State) to complex architecture design and debugging.",
-                curator: "IKBI Abdelilah",
+                curator: "Curator",
             },
             {
                 title: "Ethics: A Very Short Introduction",
@@ -261,7 +215,7 @@ export const en = {
                 synopsis:
                     "Blackburn explores the major ethical climates of our times (Kant, Utilitarianism) and how we justify our values.",
                 connection: "Using these frameworks to navigate ethical trade-offs in AI, privacy, and automation.",
-                curator: "IKBI Abdelilah",
+                curator: "Curator",
             },
             {
                 title: "Philosophy: The Basics",
@@ -272,7 +226,7 @@ export const en = {
                     "A clear introduction to the big questions of reality, science, and the mind, encouraging rigorous skepticism.",
                 connection:
                     "Sharpening the root-cause analysis skills needed to diagnose distributed failures.",
-                curator: "IKBI Abdelilah",
+                curator: "Curator",
             },
             {
                 title: "The Myth of Normal",
@@ -283,7 +237,7 @@ export const en = {
                     "Maté dissects how modern society generates illness, linking individual trauma to broader systemic pressures.",
                 connection:
                     "Understanding how systemic stress impacts reliability—in both human biology and cloud clusters.",
-                curator: "IKBI Abdelilah",
+                curator: "Curator",
             },
             {
                 title: "Irrational Man",
@@ -294,7 +248,7 @@ export const en = {
                     "A definitive account of existential philosophy, exploring how we find meaning in a purely mechanistic age.",
                 connection:
                     "Navigating the ambiguity and 'human factor' within deterministic software systems.",
-                curator: "IKBI Abdelilah",
+                curator: "Curator",
             },
             {
                 title: "The Stranger",
@@ -305,7 +259,7 @@ export const en = {
                     "Camus' classic novel in which an ordinary clerk confronts the absurdity of existence under a relentless Algerian sun.",
                 connection:
                     "A touchstone for discussions about alienation, moral indifference, and the limits of rational explanation.",
-                curator: "IKBI Abdelilah",
+                curator: "Curator",
             },
             {
                 title: "Crime and Punishment",
@@ -316,7 +270,7 @@ export const en = {
                     "The story of Raskolnikov, a former student whose crime forces him into a labyrinth of guilt, fever, and uneasy redemption.",
                 connection:
                     "Invites slow reading around conscience, justification, and the city as a feverish moral landscape.",
-                curator: "IKBI Abdelilah",
+                curator: "Curator",
             },
             {
                 title: "Meditations",
@@ -327,7 +281,7 @@ export const en = {
                     "Private notes of a Roman emperor reflecting on duty, impermanence, and the discipline of inner life.",
                 connection:
                     "Forms the backbone of Stoic practice in the club—returning often when life or work feels scattered.",
-                curator: "IKBI Abdelilah",
+                curator: "Curator",
             },
         ],
     },
@@ -384,18 +338,8 @@ export const en = {
             error: "Error. Try again.",
         },
     },
-    endorsements: {
-        heading: "",
-        subheading: "",
-        roleAt: "",
-        items: [],
-    },
-    guestbook: {
-        heading: "",
-        subheading: "",
-    },
     footer: {
-        owner: "[Your Name]",
+        owner: "LITERATUM",
         rights: "All rights reserved.",
         builtBy: "Designed & Built by",
     },

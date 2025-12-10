@@ -5,6 +5,6 @@ export function cn(
 }
 
 export function prefix(path: string): string {
-    const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+    const basePath = process.env.NODE_ENV === "production" ? "/gdi" : "";
     return `${basePath}${path}`;
 }

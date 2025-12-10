@@ -42,9 +42,18 @@ export const notoTifinagh = Noto_Sans_Tifinagh({
 });
 
 export const metadata: Metadata = {
-  title: "Developer Portfolio Template",
+  title: "LITERATUM | The Syntax Society",
   description:
-    "A Dark Academia–inspired portfolio and reading club template where engineering, architecture, and philosophy can meet.",
+    "A Dark Academia Reading Club. Where Engineering Meets Philosophy.",
+  keywords: [
+    "Literature",
+    "Philosophy",
+    "Reading Club",
+    "Dark Academia",
+    "Syntax Society",
+  ],
+  authors: [{ name: "The Syntax Society" }],
+  creator: "LITERATUM",
 };
 
 export default function RootLayout({

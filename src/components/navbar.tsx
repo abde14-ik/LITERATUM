@@ -1,56 +1,52 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X, BookOpen } from "lucide-react";
-import { Cairo, Noto_Sans_Tifinagh } from "next/font/google";
 import { AnimatePresence, motion } from "framer-motion";
+import { en } from "@/locales/en";
 import { profile } from "@/constants/data";
 import { prefix } from "@/lib/utils";
 import { AvatarModal } from "@/components/avatar-modal";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { useLanguage } from "@/context/language-context";
 
-const cairo = Cairo({
-    subsets: ["arabic"],
-    weight: ["700"],
-});
-
-const notoTifinagh = Noto_Sans_Tifinagh({
-    subsets: ["tifinagh"],
-    weight: "400",
-});
-
 export function Navbar() {
     const [isAvatarOpen, setIsAvatarOpen] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
     const [index, setIndex] = useState(0);
     const { content } = useLanguage();
+    const typedContent = content as typeof en;
 
-    const nav = content.nav;
-    const navbar = content.navbar ?? {};
+    const nav = typedContent.nav;
+    const navbar = typedContent.navbar ?? {};
 
     const identities = [
         { text: "LITERATUM", font: "font-serif tracking-[0.35em] uppercase", lang: "la" },
     ];
+    const identityCount = identities.length;
 
     useEffect(() => {
         const id = setInterval(() => {
-            setIndex((prev) => (prev + 1) % identities.length);
+            setIndex((prev) => (prev + 1) % identityCount);
         }, 10000);
 
         return () => clearInterval(id);
-    }, []);
+    }, [identityCount]);
 
-    const desktopLinks =
-        (navbar.items as { id: string; label: string }[] | undefined) ?? [
-            { id: "hero", label: nav.home },
-            { id: "inkwell", label: (content as any).inkwell?.heading ?? "The Inkwell" },
-            { id: "about", label: (content as any).aboutClub?.heading ?? nav.about },
-            { id: "projects", label: (content as any).archives?.heading ?? nav.projects },
-            { id: "skills", label: (content as any).lexicon?.heading ?? nav.skills },
-        ];
+    type NavLink = { id: string; label: string };
+    const defaultLinks: NavLink[] = [
+        { id: "hero", label: nav.home },
+        { id: "about", label: typedContent.aboutClub?.heading ?? nav.about },
+        { id: "inkwell", label: typedContent.inkwell?.heading ?? "The Inkwell" },
+        { id: "projects", label: typedContent.archives?.heading ?? nav.projects },
+        { id: "skills", label: typedContent.lexicon?.heading ?? nav.skills },
+    ];
+
+    const navbarItems = navbar.items
+        ? navbar.items.map((item) => ({ id: item.id, label: item.label }))
+        : undefined;
+    const desktopLinks: NavLink[] = navbarItems ?? defaultLinks;
 
     const mobileLinks = desktopLinks;
 

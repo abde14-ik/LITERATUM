@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
@@ -16,14 +15,9 @@ type AvatarModalProps = {
 };
 
 export function AvatarModal({ isOpen, onClose, src, alt }: AvatarModalProps) {
-    const [mounted, setMounted] = useState(false);
     const { content } = useLanguage();
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    if (!mounted) return null;
+    if (typeof document === "undefined") return null;
 
     return createPortal(
         <AnimatePresence>

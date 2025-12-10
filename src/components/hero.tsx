@@ -1,8 +1,6 @@
 ﻿"use client";
 
 import { motion } from "framer-motion";
-import { ArrowDownRight, Download, MapPin } from "lucide-react";
-import { prefix } from "@/lib/utils";
 import { useLanguage } from "@/context/language-context";
 
 const heroVariants = {

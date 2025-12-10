@@ -21,23 +21,19 @@ const LanguageContext = createContext<LanguageContextValue | undefined>(undefine
 const STORAGE_KEY = "language-preference";
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-    const [language, setLanguage] = useState<Language>("en");
-    const [isHydrated, setIsHydrated] = useState(false);
+    const [language, setLanguage] = useState<Language>(() => {
+        if (typeof window === "undefined") {
+            return "en";
+        }
+        const stored = window.localStorage.getItem(STORAGE_KEY) as Language | null;
+        return stored === "en" || stored === "fr" ? stored : "en";
+    });
     const [isMatrixMode, setIsMatrixMode] = useState(false);
 
     useEffect(() => {
-        // Run only on the client after initial mount
-        const stored = window.localStorage.getItem(STORAGE_KEY) as Language | null;
-        if (stored === "en" || stored === "fr") {
-            setLanguage(stored);
-        }
-        setIsHydrated(true);
-    }, []);
-
-    useEffect(() => {
-        if (!isHydrated) return;
+        if (typeof window === "undefined") return;
         window.localStorage.setItem(STORAGE_KEY, language);
-    }, [language, isHydrated]);
+    }, [language]);
 
     const content = language === "fr" ? fr : en;
 

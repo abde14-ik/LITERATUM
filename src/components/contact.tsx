@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import { contact, profile } from "@/constants/data";
-import { Github, Linkedin, Mail, Activity } from "lucide-react";
-import Link from "next/link";
+import { Mail } from "lucide-react";
 import { useLanguage } from "@/context/language-context";
 import emailjs from "@emailjs/browser";
 import { FormEvent, useRef, useState } from "react";
@@ -59,7 +58,7 @@ export function ContactSection() {
         >
             <header className="mb-12 space-y-3">
                 <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-slate-100">
-                    {content.contact.heading}
+                    Epilogue
                 </h2>
                 <p className="text-sm text-slate-400 sm:text-base">
                     {content.contact.subheading}
@@ -95,7 +94,7 @@ export function ContactSection() {
                                 type="email"
                                 className="w-full rounded-lg border border-violet-900/50 bg-midnight/80 px-3 py-2 text-sm text-slate-100 outline-none ring-0 transition focus:border-gold focus:ring-1 focus:ring-gold"
                                 placeholder={content.contact.form.emailPlaceholder}
-                                defaultValue={profile.email}
+                                defaultValue=""
                             />
                         </div>
                     </div>

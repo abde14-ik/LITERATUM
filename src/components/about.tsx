@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/language-context";
+import { en } from "@/locales/en";
 // import { Gallery } from "@/components/gallery";
 
 const sectionVariants = {
@@ -11,7 +12,8 @@ const sectionVariants = {
 
 export function AboutSection() {
     const { content } = useLanguage();
-    const about = (content as any).aboutClub ?? (content as any).about;
+    const typedContent = content as typeof en;
+    const about = typedContent.aboutClub ?? typedContent.about;
 
     return (
         <motion.section

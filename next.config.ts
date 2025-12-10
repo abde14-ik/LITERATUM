@@ -7,8 +7,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/portfolio", // MUST match your GitHub repo name exactly
-  assetPrefix: "/portfolio/",
+  basePath: "/gdi", // MUST match your GitHub repo name exactly
+  assetPrefix: "/gdi/",
   trailingSlash: true,
 };
 
