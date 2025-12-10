@@ -1,6 +1,6 @@
 "use client";
 
-import { type FormEvent, useState } from "react";
+import { type FormEvent, useEffect, useState } from "react";
 import { en } from "@/locales/en";
 import { useLanguage } from "@/context/language-context";
 
@@ -31,6 +31,17 @@ export function TheInkwell() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [showArchive, setShowArchive] = useState(false);
     const [selectedEntry, setSelectedEntry] = useState<Entry | null>(null);
+
+    useEffect(() => {
+        const handleEsc = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                setSelectedEntry(null);
+            }
+        };
+
+        window.addEventListener("keydown", handleEsc);
+        return () => window.removeEventListener("keydown", handleEsc);
+    }, []);
 
     if (!inkwell) {
         return null;
@@ -248,10 +259,11 @@ export function TheInkwell() {
                     >
                         <button
                             type="button"
-                            className="absolute right-4 top-4 text-xs font-[var(--font-fira-code)] uppercase tracking-[0.2em] text-[#5c4a36] hover:text-[#231709] transition-colors"
+                            className="absolute right-4 top-4 text-xl leading-none font-[var(--font-heading)] text-[#5c4a36] hover:text-[#231709] transition-colors"
                             onClick={() => setSelectedEntry(null)}
+                            aria-label="Close"
                         >
-                            Close
+                            ×
                         </button>
 
                         <h3 className="font-[var(--font-heading)] text-2xl sm:text-3xl tracking-tight">
