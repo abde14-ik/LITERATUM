@@ -80,7 +80,7 @@ export function ContactSection() {
                                 id="name"
                                 name="user_name"
                                 type="text"
-                                className="w-full rounded-lg border border-subtle bg-paper px-3 py-2 text-sm text-espresso outline-none ring-0 transition focus:ring-2 focus:ring-accent focus:border-transparent"
+                                className="w-full rounded-lg border border-[#443a33] bg-[#F2E8C9] px-3 py-2 text-sm text-[#231709] placeholder:text-gray-500 outline-none ring-0 transition focus:ring-2 focus:ring-accent focus:border-transparent"
                                 placeholder={content.contact.form.namePlaceholder}
                             />
                         </div>
@@ -92,7 +92,7 @@ export function ContactSection() {
                                 id="email"
                                 name="user_email"
                                 type="email"
-                                className="w-full rounded-lg border border-subtle bg-paper px-3 py-2 text-sm text-espresso outline-none ring-0 transition focus:ring-2 focus:ring-accent focus:border-transparent"
+                                className="w-full rounded-lg border border-[#443a33] bg-[#F2E8C9] px-3 py-2 text-sm text-[#231709] placeholder:text-gray-500 outline-none ring-0 transition focus:ring-2 focus:ring-accent focus:border-transparent"
                                 placeholder={content.contact.form.emailPlaceholder}
                                 defaultValue=""
                             />
@@ -106,7 +106,7 @@ export function ContactSection() {
                             id="message"
                             name="message"
                             rows={4}
-                            className="w-full resize-none rounded-lg border border-subtle bg-paper px-3 py-2 text-sm text-espresso outline-none ring-0 transition focus:ring-2 focus:ring-accent focus:border-transparent"
+                            className="w-full resize-none rounded-lg border border-[#443a33] bg-[#F2E8C9] px-3 py-2 text-sm text-[#231709] placeholder:text-gray-500 outline-none ring-0 transition focus:ring-2 focus:ring-accent focus:border-transparent"
                             placeholder={content.contact.form.messagePlaceholder}
                         />
                     </div>
