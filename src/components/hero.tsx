@@ -75,7 +75,7 @@ export function HeroSection() {
                                 <p className="mt-1 text-xl sm:text-2xl text-espresso font-serif italic leading-snug">
                                     {hero.statusBookValue}
                                 </p>
-                                <p className="text-sm text-espresso/80 italic">
+                                <p className="text-sm font-mono uppercase tracking-[0.16em] text-espresso/80">
                                     {hero.statusBookAuthor}
                                 </p>
                                 {hero.statusBookSubtitle && (

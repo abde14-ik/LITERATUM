@@ -80,7 +80,7 @@ export function ContactSection() {
                                 id="name"
                                 name="user_name"
                                 type="text"
-                                className="w-full rounded-lg border border-violet-900/50 bg-midnight/80 px-3 py-2 text-sm text-slate-100 outline-none ring-0 transition focus:border-gold focus:ring-1 focus:ring-gold"
+                                className="w-full rounded-lg border border-subtle bg-paper px-3 py-2 text-sm text-espresso outline-none ring-0 transition focus:ring-2 focus:ring-accent focus:border-transparent"
                                 placeholder={content.contact.form.namePlaceholder}
                             />
                         </div>
@@ -92,7 +92,7 @@ export function ContactSection() {
                                 id="email"
                                 name="user_email"
                                 type="email"
-                                className="w-full rounded-lg border border-violet-900/50 bg-midnight/80 px-3 py-2 text-sm text-slate-100 outline-none ring-0 transition focus:border-gold focus:ring-1 focus:ring-gold"
+                                className="w-full rounded-lg border border-subtle bg-paper px-3 py-2 text-sm text-espresso outline-none ring-0 transition focus:ring-2 focus:ring-accent focus:border-transparent"
                                 placeholder={content.contact.form.emailPlaceholder}
                                 defaultValue=""
                             />
@@ -106,7 +106,7 @@ export function ContactSection() {
                             id="message"
                             name="message"
                             rows={4}
-                            className="w-full resize-none rounded-lg border border-violet-900/50 bg-midnight/80 px-3 py-2 text-sm text-slate-100 outline-none ring-0 transition focus:border-gold focus:ring-1 focus:ring-gold"
+                            className="w-full resize-none rounded-lg border border-subtle bg-paper px-3 py-2 text-sm text-espresso outline-none ring-0 transition focus:ring-2 focus:ring-accent focus:border-transparent"
                             placeholder={content.contact.form.messagePlaceholder}
                         />
                     </div>
@@ -121,7 +121,7 @@ export function ContactSection() {
                                 ? content.contact.states.success
                                 : status === "error"
                                     ? content.contact.states.error
-                                    : content.contact.form.submitLabel}
+                                    : content.contact.form.button}
                     </button>
                 </form>
 
@@ -133,11 +133,11 @@ export function ContactSection() {
                             </dt>
                             <dd className="mt-1">
                                 <a
-                                    href={`mailto:${contact.email}`}
+                                    href={`mailto:${content.contact.info.emailValue ?? contact.email}`}
                                     className="inline-flex items-center gap-2 text-gold hover:text-amber-200"
                                 >
                                     <Mail className="h-3.5 w-3.5" />
-                                    <span>{contact.email}</span>
+                                    <span>{content.contact.info.emailValue ?? contact.email}</span>
                                 </a>
                             </dd>
                         </div>
@@ -145,13 +145,13 @@ export function ContactSection() {
                             <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
                                 {content.contact.info.locationLabel}
                             </dt>
-                            <dd className="mt-1 text-slate-200">{content.contact.meta.location}</dd>
+                            <dd className="mt-1 text-slate-200">{content.contact.info.locationValue}</dd>
                         </div>
                         <div>
                             <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
                                 {content.contact.info.availabilityLabel}
                             </dt>
-                            <dd className="mt-1 text-slate-200">{content.contact.meta.availability}</dd>
+                            <dd className="mt-1 text-slate-200">{content.contact.info.availabilityValue}</dd>
                         </div>
                     </dl>
                 </div>

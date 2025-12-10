@@ -63,6 +63,20 @@ export const en = {
         statusReadingLabel: "Reading",
         statusTrainingLabel: "Training",
         establishedLine: "Founded MMXXV within the walls of INPT.",
+        ledger: {
+            header: "Official Record",
+            title: "LITERATUM LOG",
+            currentLabel: "Current Inquiry",
+            bookTitle: "The Human Condition",
+            bookAuthor: "Multi-disciplinary",
+            subTitle: "Exploring the boundaries of existence and society.",
+            themeLabel: "Key Concepts",
+            themeList: "Ethics · Psychology · Systems",
+            statusLabel: "Gathering",
+            statusValue: "Every Thursday, 18:00",
+            notesLabel: "Curator's Note",
+            notesValue: "\"We are currently accepting proposals for the next cycle of texts.\"",
+        },
         status: {
             focusSub: "Infrastructure as Code & Automation",
             professionalLabel: "Professional Focus",
@@ -129,7 +143,7 @@ export const en = {
     },
     archives: {
         heading: "Ex Libris",
-        subheading: "A curation of works explored by the Syntax Society.",
+        subheading: "A curation of works explored by our members.",
         items: [
             {
                 title: "The Stranger",
@@ -294,26 +308,26 @@ export const en = {
         note: "This space is purely local – nothing you write is sent anywhere. Treat it as a private margin note.",
     },
     contact: {
-        heading: "Let's build something great together.",
+        heading: "Epilogue",
         subheading:
-            "If you're looking for someone who cares about reliability, craft and people, this template is ready to adapt to your story.",
+            "The dialogue continues beyond the page. Whether you seek membership, wish to propose a text, or simply want to debate a concept, our doors are open.",
         form: {
-            nameLabel: "Name",
-            namePlaceholder: "Your name",
-            emailLabel: "Email",
-            emailPlaceholder: "you@company.com",
-            messageLabel: "Message",
+            nameLabel: "Your Name",
+            namePlaceholder: "Who is writing?",
+            emailLabel: "Coordinates",
+            emailPlaceholder: "Where shall we reply?",
+            messageLabel: "Inquiry",
             messagePlaceholder:
-                "Tell me a bit about your team, projects, or expectations for the PFE.",
-            submitLabel: "Send message",
-            staticNote:
-                "This form sends directly via EmailJS. You can update the template or provider later if needed.",
+                "Tell us about the books that haunt you, or ask about our next gathering...",
+            button: "Send Dispatch",
         },
         info: {
-            emailLabel: "Email",
-            locationLabel: "Location",
-            availabilityLabel: "Availability",
-            linkedinLabel: "LinkedIn",
+            emailLabel: "Correspondence",
+            emailValue: "contact@literatum.club",
+            locationLabel: "Sanctuary",
+            locationValue: "Rabat, INPT Campus",
+            availabilityLabel: "Gatherings",
+            availabilityValue: "Every Thursday, 18:00",
             githubLabel: "GitHub",
             stravaLabel: "Strava",
         },

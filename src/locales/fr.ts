@@ -63,6 +63,20 @@ export const fr = {
         statusReadingLabel: "Lecture",
         statusTrainingLabel: "Pratique",
         establishedLine: "Fondé en MMXXV dans l'enceinte de l'INPT.",
+        ledger: {
+            header: "Registre Officiel",
+            title: "JOURNAL LITERATUM",
+            currentLabel: "Enquête Actuelle",
+            bookTitle: "La Condition Humaine",
+            bookAuthor: "Pluridisciplinaire",
+            subTitle: "Explorer les frontières de l'existence et de la société.",
+            themeLabel: "Concepts Clés",
+            themeList: "Éthique · Psychologie · Systèmes",
+            statusLabel: "Réunion",
+            statusValue: "Chaque Jeudi, 18h00",
+            notesLabel: "Note du Curateur",
+            notesValue: "\"Nous acceptons actuellement les propositions pour le prochain cycle.\"",
+        },
         status: {
             focusSub: "Soins du texte",
             professionalLabel: "Focus collectif",
@@ -130,7 +144,7 @@ export const fr = {
     },
     archives: {
         heading: "Ex Libris",
-        subheading: "Une curation d'œuvres explorées par la Syntax Society.",
+        subheading: "Une curation d'œuvres explorées par nos membres.",
         items: [
             {
                 title: "L'Étranger",
@@ -293,49 +307,47 @@ export const fr = {
     contact: {
         heading: "Épilogue",
         subheading:
-            "Un dernier mot avant de fermer le livre : dites-nous ce que vous aimeriez lire ou organiser.",
+            "Le dialogue continue au-delà de la page. Que vous souhaitiez devenir membre, proposer un texte ou simplement débattre d'un concept, nos portes sont ouvertes.",
         form: {
-            nameLabel: "Nom",
-            namePlaceholder: "Votre nom",
-            emailLabel: "Email",
-            emailPlaceholder: "vous@exemple.com",
-            messageLabel: "Message",
-            messagePlaceholder: "Partagez une idée, une recommandation ou une collaboration...",
-            submitLabel: "Envoyer",
-            staticNote: "Ce formulaire utilise EmailJS. Libre à vous de changer de service plus tard.",
+            nameLabel: "Votre Nom",
+            namePlaceholder: "Qui nous écrit ?",
+            emailLabel: "Coordonnées",
+            emailPlaceholder: "Où vous répondre ?",
+            messageLabel: "Votre Message",
+            messagePlaceholder: "Parlez-nous des livres qui vous hantent, ou demandez le programme...",
+            button: "Envoyer la Dépêche",
         },
         info: {
-            emailLabel: "Email",
-            locationLabel: "Lieu",
-            availabilityLabel: "Disponibilité",
-            linkedinLabel: "LinkedIn",
-            githubLabel: "GitHub",
-            stravaLabel: "Strava",
+            emailLabel: "Correspondance",
+            emailValue: "contact@literatum.club",
+            locationLabel: "Sanctuaire",
+            locationValue: "Rabat, Campus INPT",
+            availabilityLabel: "Réunions",
+            availabilityValue: "Chaque Jeudi, 18h00",
         },
         meta: {
             location: "Rabat, Campus INPT",
-            availability: "Disponibilité à adapter à votre club.",
+            availability: "Chaque Jeudi, 18h00",
+            status: {
+                idle: "Envoyer",
+                sending: "Envoi...",
+                success: "Envoyé ! Merci pour votre message.",
+                error: "Un souci est survenu. Réessayez ou écrivez-nous directement.",
+            },
+            placeholders: {
+                name: "Jean Dupont",
+                email: "jean@exemple.com",
+                message: "Parlez-nous de votre projet...",
+            },
+            states: {
+                sending: "Envoi...",
+                success: "Message envoyé !",
+                error: "Erreur. Réessayez.",
+            },
         },
-        status: {
-            idle: "Envoyer",
-            sending: "Envoi...",
-            success: "Envoyé ! Merci pour votre message.",
-            error: "Un souci est survenu. Réessayez ou écrivez-nous directement.",
+        footer: {
+            owner: "LITERATUM",
+            rights: "Tous droits réservés.",
+            builtBy: "Conçu & construit par",
         },
-        placeholders: {
-            name: "Jean Dupont",
-            email: "jean@exemple.com",
-            message: "Parlez-nous de votre projet...",
-        },
-        states: {
-            sending: "Envoi...",
-            success: "Message envoyé !",
-            error: "Erreur. Réessayez.",
-        },
-    },
-    footer: {
-        owner: "LITERATUM",
-        rights: "Tous droits réservés.",
-        builtBy: "Conçu & construit par",
-    },
-} as const;
+    } as const;
