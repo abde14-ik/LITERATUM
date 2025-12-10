@@ -69,7 +69,7 @@ export function HeroSection() {
                                 <p className="mt-1 text-xl sm:text-2xl text-espresso font-serif italic leading-snug">
                                     {ledger?.bookTitle}
                                 </p>
-                                <p className="text-xs font-serif uppercase tracking-[0.2em] text-espresso/80">
+                                <p className="text-xs font-[var(--font-heading)] uppercase tracking-[0.2em] text-espresso/80">
                                     {ledger?.bookAuthor}
                                 </p>
                                 {ledger?.subTitle && (

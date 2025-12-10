@@ -33,21 +33,42 @@ body {
   color: var(--color-parchment);
   font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  background-image: radial-gradient(
-      circle at top,
+  background-image: radial-gradient(circle at top,
       rgba(197, 160, 89, 0.18),
-      transparent 60%
-    ),
-    repeating-linear-gradient(
-      0deg,
+      transparent 60%),
+    repeating-linear-gradient(0deg,
       rgba(255, 255, 255, 0.04),
       rgba(255, 255, 255, 0.04) 1px,
       transparent 1px,
-      transparent 3px
-    );
+      transparent 3px);
   background-blend-mode: soft-light;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translate(var(--x-start), var(--y-start));
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.6;
+  }
+
+  80% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translate(var(--x-end), var(--y-end));
+    opacity: 0;
+  }
+}
+
+.animate-firefly {
+  animation: float-up var(--duration) linear infinite;
+  animation-delay: var(--delay);
 }
