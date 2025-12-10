@@ -31,7 +31,7 @@ export const en = {
         avatar: "/philosophy.jpg",
         badge: "LITERATUM • Verba Volant, Scripta Manent.",
         bio: "A quiet corner for long-form reading, marginalia, and slow thinking for people who live a little too much inside books.",
-        statusDot: "Reading session in progress",
+        statusDot: "Reading Env in progress",
         location: "[City, Country]",
         remote: "Open to International & Remote",
         locationMeta: "[City, Country] • Open to international & remote opportunities",
