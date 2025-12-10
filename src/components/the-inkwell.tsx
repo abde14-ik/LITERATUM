@@ -34,7 +34,7 @@ export function TheInkwell() {
 
     const fetchEntries = async () => {
         const { data, error } = await supabase
-            .from<InkWellRow>("inkwell_entries")
+            .from("inkwell_entries")
             .select("*")
             .order("created_at", { ascending: false });
 

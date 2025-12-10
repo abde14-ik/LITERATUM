@@ -2,18 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Cairo, Playfair_Display } from "next/font/google";
 import { useLanguage } from "@/context/language-context";
-
-const cairo = Cairo({
-  subsets: ["arabic"],
-  weight: ["400", "700"],
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-});
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -23,17 +12,17 @@ export function Footer() {
     {
       text: "A human being is never meant to be dissociated into parts. We are complex, whole, and far more than what we think.",
       lang: "en",
-      font: playfair.className,
+      font: "font-serif",
     },
     {
       text: "L'être humain n'est pas fait pour être dissocié en parties. Nous sommes complexes, entiers, et bien plus que ce que l'on imagine.",
       lang: "fr",
-      font: playfair.className,
+      font: "font-serif",
     },
     {
       text: "لم يُخلق الإنسان ليُختزل في أجزاء. نحن كيانٌ كاملٌ معقد، وأبعدُ بكثيرٍ مما نظن.",
       lang: "ar",
-      font: cairo.className,
+      font: "font-serif",
     },
   ] as const;
 

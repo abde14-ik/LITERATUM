@@ -101,7 +101,7 @@ export function CommunityLibrary() {
     useEffect(() => {
         const fetchBooks = async () => {
             const { data, error } = await supabase
-                .from<LibraryRow>("library_books")
+                .from("library_books")
                 .select("*")
                 .order("created_at", { ascending: false });
 
@@ -143,7 +143,7 @@ export function CommunityLibrary() {
         setIsModalOpen(false);
     };
 
-    const handleSubmit = (event: FormEvent) => {
+    const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
 
         const trimmedTitle = title.trim();

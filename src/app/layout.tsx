@@ -1,45 +1,9 @@
 import type { Metadata } from "next";
-import {
-  Cairo,
-  Cinzel,
-  Cormorant_Garamond,
-  Fira_Code,
-  Noto_Sans_Tifinagh,
-} from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { LanguageProvider } from "@/context/language-context";
-
-const bodyFont = Cormorant_Garamond({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const headingFont = Cinzel({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const firaCode = Fira_Code({
-  variable: "--font-fira-code",
-  subsets: ["latin"],
-});
-
-const cairo = Cairo({
-  variable: "--font-cairo",
-  subsets: ["arabic"],
-  weight: "400",
-});
-
-export const notoTifinagh = Noto_Sans_Tifinagh({
-  variable: "--font-tifinagh",
-  subsets: ["tifinagh"],
-  weight: "400",
-});
 
 export const metadata: Metadata = {
   title: "LITERATUM | The Syntax Society",
@@ -63,9 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <body
-        className={`${bodyFont.variable} ${headingFont.variable} ${firaCode.variable} ${cairo.variable} ${notoTifinagh.variable} antialiased`}
-      >
+      <body className="antialiased font-sans">
         <LanguageProvider>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
             <div className="min-h-screen bg-espresso text-parchment transition-colors duration-300 bg-[radial-gradient(circle_at_top,_rgba(197,160,89,0.18),transparent_65%)]">
