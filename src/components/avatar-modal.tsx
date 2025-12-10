@@ -58,38 +58,6 @@ export function AvatarModal({ isOpen, onClose, src, alt }: AvatarModalProps) {
                             />
                         </motion.div>
 
-                        <motion.div
-                            className="mt-3 flex items-center justify-center gap-3 text-xs text-slate-200"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.15, duration: 0.2, ease: "easeOut" }}
-                        >
-                            <a
-                                href={profile.linkedin}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/90 text-slate-100 shadow-sm shadow-black/50 transition hover:bg-slate-800/90"
-                                aria-label="LinkedIn"
-                            >
-                                <Linkedin className="h-4 w-4" />
-                            </a>
-                            <a
-                                href={profile.github}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/90 text-slate-100 shadow-sm shadow-black/50 transition hover:bg-slate-800/90"
-                                aria-label="GitHub"
-                            >
-                                <Github className="h-4 w-4" />
-                            </a>
-                            <a
-                                href={`mailto:${profile.email}`}
-                                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/90 text-slate-100 shadow-sm shadow-black/50 transition hover:bg-slate-800/90"
-                                aria-label={content.contact.info.emailLabel}
-                            >
-                                <Mail className="h-4 w-4" />
-                            </a>
-                        </motion.div>
                     </motion.div>
                 </motion.div>
             )}

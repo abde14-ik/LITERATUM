@@ -3,6 +3,7 @@
 import { type FormEvent, useEffect, useState } from "react";
 import { en } from "@/locales/en";
 import { useLanguage } from "@/context/language-context";
+import { supabase } from "@/lib/supabase";
 
 type Entry = {
     id: string;
@@ -12,25 +13,42 @@ type Entry = {
     isUser: boolean;
 };
 
+type InkWellRow = {
+    id: string;
+    author: string;
+    content: string;
+    created_at: string;
+};
+
 export function TheInkwell() {
     const { content } = useLanguage();
     const inkwell = (content as typeof en).inkwell;
 
-    const [entries, setEntries] = useState<Entry[]>([
-        {
-            id: "0",
-            author: "System",
-            text: "Welcome to the Inkwell. The margins are yours.",
-            date: "Now",
-            isUser: false,
-        },
-    ]);
+    const [entries, setEntries] = useState<Entry[]>([]);
 
     const [entryText, setEntryText] = useState("");
     const [authorName, setAuthorName] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [showArchive, setShowArchive] = useState(false);
     const [readingEntry, setReadingEntry] = useState<Entry | null>(null);
+
+    const fetchEntries = async () => {
+        const { data, error } = await supabase
+            .from<InkWellRow>("inkwell_entries")
+            .select("*")
+            .order("created_at", { ascending: false });
+
+        if (!error && data) {
+            const mapped: Entry[] = data.map((row: InkWellRow) => ({
+                id: row.id,
+                author: row.author ?? "Anonymous",
+                text: row.content ?? "",
+                date: new Date(row.created_at).toLocaleString(),
+                isUser: true,
+            }));
+            setEntries(mapped);
+        }
+    };
 
     const getPreviewText = (text: string): string => {
         const sentences = text.split(/(?<=[.!?])\s+/).filter(Boolean);
@@ -45,6 +63,10 @@ export function TheInkwell() {
         const sentences = text.split(/(?<=[.!?])\s+/).filter(Boolean);
         return sentences.length > 3;
     };
+
+    useEffect(() => {
+        fetchEntries();
+    }, []);
 
     useEffect(() => {
         if (!readingEntry) {
@@ -75,7 +97,7 @@ export function TheInkwell() {
     const latestEntry = entries[0];
     const archiveEntries = entries.slice(1);
 
-    const handleDeploy = () => {
+    const handleDeploy = async () => {
         const trimmedText = entryText.trim();
         const trimmedAuthor = authorName.trim();
 
@@ -85,34 +107,15 @@ export function TheInkwell() {
 
         setIsSubmitting(true);
 
-        const now = new Date();
-        const formattedDate = now.toLocaleString(undefined, {
-            year: "numeric",
-            month: "short",
-            day: "2-digit",
-            hour: "2-digit",
-            minute: "2-digit",
-        });
+        await supabase
+            .from("inkwell_entries")
+            .insert([{ author: trimmedAuthor, content: trimmedText }]);
 
-        const newEntryBase: Omit<Entry, "id"> = {
-            author: trimmedAuthor,
-            text: trimmedText,
-            date: formattedDate,
-            isUser: true,
-        };
+        await fetchEntries();
 
         setEntryText("");
         setAuthorName("");
-
-        window.setTimeout(() => {
-            const newEntry: Entry = {
-                id: Date.now().toString(),
-                ...newEntryBase,
-            };
-
-            setEntries((prev) => [newEntry, ...prev]);
-            setIsSubmitting(false);
-        }, 1000);
+        setIsSubmitting(false);
     };
 
     const handleSubmit = (event: FormEvent) => {

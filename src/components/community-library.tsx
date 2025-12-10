@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/context/language-context";
 import { en } from "@/locales/en";
+import { supabase } from "@/lib/supabase";
 
 type Book = {
     title: string;
@@ -14,6 +15,16 @@ type Book = {
     notes: string;
     curator: string;
     coverColor: string;
+};
+
+type LibraryRow = {
+    id: string;
+    title: string;
+    author: string;
+    curator?: string;
+    review?: string;
+    cover_color?: string;
+    created_at: string;
 };
 
 const COVER_PALETTE: string[] = [
@@ -87,6 +98,41 @@ export function CommunityLibrary() {
         return () => window.clearTimeout(timeout);
     }, [showToast]);
 
+    useEffect(() => {
+        const fetchBooks = async () => {
+            const { data, error } = await supabase
+                .from<LibraryRow>("library_books")
+                .select("*")
+                .order("created_at", { ascending: false });
+
+            if (error) {
+                console.error("Failed to load community books", error);
+                setBooks(seededBooks);
+                return;
+            }
+
+            const dynamicBooks: Book[] =
+                data?.map((row) => ({
+                    title: row.title,
+                    author: row.author,
+                    year: "—",
+                    genre: "Reader Recommendation",
+                    dateDiscussed: "—",
+                    seriesLabel: "Community Shelf",
+                    notes: row.review ?? "",
+                    curator: row.curator ?? "Contributor",
+                    coverColor:
+                        row.cover_color ||
+                        COVER_PALETTE[Math.floor(Math.random() * COVER_PALETTE.length)],
+                })) ?? [];
+
+            setBooks([...seededBooks, ...dynamicBooks]);
+        };
+
+        fetchBooks();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [archives.items.length]);
+
     if (!archives) return null;
 
     const handleOpenModal = () => {
@@ -124,14 +170,34 @@ export function CommunityLibrary() {
             coverColor: randomColor,
         };
 
-        setBooks((prev) => [...prev, newBook]);
+        const { error } = await supabase.from("library_books").insert([
+            {
+                title: trimmedTitle,
+                author: trimmedAuthor,
+                curator: trimmedCurator,
+                review: trimmedReview,
+                cover_color: randomColor,
+            },
+        ]);
+
+        if (error) {
+            console.error("Failed to add book", error);
+        } else {
+            setBooks((prev) => [...prev, newBook]);
+            setShowToast(true);
+            if (lastBookRef.current) {
+                lastBookRef.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                });
+            }
+        }
 
         setTitle("");
         setAuthor("");
         setCurator("");
         setReview("");
         setIsModalOpen(false);
-        setShowToast(true);
     };
 
     return (
