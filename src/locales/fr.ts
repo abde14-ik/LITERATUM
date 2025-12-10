@@ -328,26 +328,27 @@ export const fr = {
         meta: {
             location: "Rabat, Campus INPT",
             availability: "Chaque Jeudi, 18h00",
-            status: {
-                idle: "Envoyer",
-                sending: "Envoi...",
-                success: "Envoyé ! Merci pour votre message.",
-                error: "Un souci est survenu. Réessayez ou écrivez-nous directement.",
-            },
-            placeholders: {
-                name: "Jean Dupont",
-                email: "jean@exemple.com",
-                message: "Parlez-nous de votre projet...",
-            },
-            states: {
-                sending: "Envoi...",
-                success: "Message envoyé !",
-                error: "Erreur. Réessayez.",
-            },
         },
-        footer: {
-            owner: "LITERATUM",
-            rights: "Tous droits réservés.",
-            builtBy: "Conçu & construit par",
+        status: {
+            idle: "Envoyer",
+            sending: "Envoi...",
+            success: "Envoyé ! Merci pour votre message.",
+            error: "Un souci est survenu. Réessayez ou écrivez-nous directement.",
         },
-    } as const;
+        placeholders: {
+            name: "Jean Dupont",
+            email: "jean@exemple.com",
+            message: "Parlez-nous de votre projet...",
+        },
+        states: {
+            sending: "Envoi...",
+            success: "Message envoyé !",
+            error: "Erreur. Réessayez.",
+        },
+    },
+    footer: {
+        owner: "LITERATUM",
+        rights: "Tous droits réservés.",
+        builtBy: "Conçu & construit par",
+    },
+} as const;
