@@ -1,16 +1,16 @@
-# LITERATUM
+# LITERATUM — INPT Literature Club Template
 
-> A Dark Academia Reading Club Template built with Next.js & Tailwind.
+> A dark-academia reading club site for INPT. Built with Next.js & Tailwind, ready for GitHub Pages.
 
-**LITERATUM** frames your club as a quiet library: espresso backgrounds, parchment surfaces, Cinzel headings, and Cormorant Garamond body copy. It ships as a static site ready for GitHub Pages.
+**LITERATUM** frames our club as a quiet library: espresso backgrounds, parchment panels, Cinzel headings, and Cormorant Garamond body copy. Everything is localized (EN/FR) and ships as a static export.
 
-## Features
+## What’s inside
 
-- **Ex Libris** — A virtual bookshelf (Community Library) with curator tags and stacked shelves.
-- **The Inkwell** — Weekly writing prompts with a parchment input and local-only inscriptions.
-- **The Lexicon** — A thematic index of genres, traditions, and motifs.
-- **Prologue** — Club origin and rituals.
-- **Epilogue** — Contact form powered by EmailJS (optional).
+- **Prologue** — Club origin, rituals, and what we stand for.
+- **The Inkwell** — Weekly prompts with local-only inscriptions (no backend).
+- **Ex Libris** — Community Library shelves with curator tags.
+- **The Lexicon** — Themes, genres, and motifs we revisit.
+- **Epilogue** — Contact form (EmailJS-ready, optional).
 
 ## Tech Stack
 
@@ -18,29 +18,29 @@
 - Framer Motion · Lucide React
 - Static export (`output: "export"`) for GitHub Pages (basePath/assetPrefix set to `/gdi` by default).
 
-## Getting Started
+## Quickstart
 
 ```bash
 npm install
 npm run dev
-# visit http://localhost:3000/gdi
+# open http://localhost:3000/gdi
 ```
 
-## Production / GitHub Pages
+## Build & Deploy (GitHub Pages)
 
 ```bash
-npm run build    # emits static site to ./out
+npm run build   # outputs ./out
 ```
 
-Deploy with the included GitHub Actions workflow. If your repo name is not `gdi`, update `basePath` and `assetPrefix` in `next.config.ts` to match your repo slug.
+Use the included GitHub Actions workflow. If your repo name differs from `gdi`, update `basePath` and `assetPrefix` in `next.config.ts` to your repo slug.
 
-## Customize Content
+## Customize for INPT
 
-Edit the locale files:
+Edit locales:
 - `src/locales/en.ts`
 - `src/locales/fr.ts`
 
-Sections to update:
-- `hero`, `aboutClub`, `inkwell`, `archives` / `library`, `lexicon`, `contact`
+Key sections to adapt:
+- `hero`, `aboutClub` (Prologue), `inkwell`, `archives` / `library` (Ex Libris), `lexicon`, `contact`
 
-Swap book covers and textures in `public/` with your own assets.
+Swap book covers and textures in `public/` with your own assets. Update `profile` in `src/constants/data.ts` for contact metadata (email is consumed by the form but hidden from placeholders by default).
