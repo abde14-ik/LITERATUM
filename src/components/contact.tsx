@@ -113,7 +113,17 @@ export function ContactSection() {
                     <button
                         type="submit"
                         disabled={status === "loading"}
-                        className="inline-flex items-center justify-center rounded-full border border-gold/40 bg-gradient-to-r from-royal to-royalDark px-5 py-2.5 text-sm font-semibold text-slate-50 shadow-lg shadow-gold/30 transition hover:border-gold/70 hover:from-royalDark hover:to-royal disabled:cursor-not-allowed disabled:opacity-70"
+                        className="
+                            inline-flex items-center justify-center rounded-sm
+                            bg-[#231709] text-[#C5A059]
+                            border border-[#C5A059]/40
+                            px-5 py-2.5 text-sm font-semibold uppercase tracking-widest
+                            shadow-[0_0_12px_rgba(197,160,89,0.12)]
+                            transition-all duration-300
+                            hover:bg-[#3C2A20] hover:text-[#F2E8C9]
+                            hover:shadow-[0_0_18px_rgba(197,160,89,0.28)]
+                            disabled:cursor-not-allowed disabled:opacity-60
+                        "
                     >
                         {status === "loading"
                             ? content.contact.states.sending

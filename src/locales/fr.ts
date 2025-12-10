@@ -307,33 +307,35 @@ export const fr = {
     contact: {
         heading: "Épilogue",
         subheading:
-            "Le dialogue continue au-delà de la page. Que vous souhaitiez devenir membre, proposer un texte ou simplement débattre d'un concept, nos portes sont ouvertes.",
+            "Le dialogue continue au-delà de la page. Que vous souhaitiez devenir membre ou débattre d'un concept, nos portes sont ouvertes.",
         form: {
             nameLabel: "Votre Nom",
             namePlaceholder: "Qui nous écrit ?",
             emailLabel: "Coordonnées",
             emailPlaceholder: "Où vous répondre ?",
             messageLabel: "Votre Message",
-            messagePlaceholder: "Parlez-nous des livres qui vous hantent, ou demandez le programme...",
+            messagePlaceholder: "Parlez-nous des livres qui vous hantent...",
             button: "Envoyer la Dépêche",
+            success: "Message Reçu.",
+            error: "Échec de transmission.",
         },
         info: {
             emailLabel: "Correspondance",
-            emailValue: "contact@literatum.club",
+            emailValue: "abdeikbi200@gmail.com",
             locationLabel: "Sanctuaire",
             locationValue: "Rabat, Campus INPT",
             availabilityLabel: "Réunions",
-            availabilityValue: "Chaque Jeudi, 18h00",
+            availabilityValue: "Les Week-ends",
         },
         meta: {
             location: "Rabat, Campus INPT",
-            availability: "Chaque Jeudi, 18h00",
+            availability: "Les Week-ends",
         },
         status: {
-            idle: "Envoyer",
+            idle: "Envoyer la Dépêche",
             sending: "Envoi...",
-            success: "Envoyé ! Merci pour votre message.",
-            error: "Un souci est survenu. Réessayez ou écrivez-nous directement.",
+            success: "Message Reçu.",
+            error: "Échec de transmission.",
         },
         placeholders: {
             name: "Jean Dupont",
