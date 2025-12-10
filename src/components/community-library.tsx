@@ -4,9 +4,15 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/context/language-context";
 import { en } from "@/locales/en";
 
-type ArchiveItem = (typeof en)["archives"]["items"][number];
-
-type Book = ArchiveItem & {
+type Book = {
+    title: string;
+    author: string;
+    year: string;
+    genre: string;
+    dateDiscussed: string;
+    seriesLabel: string;
+    notes: string;
+    curator: string;
     coverColor: string;
 };
 
@@ -22,7 +28,14 @@ export function CommunityLibrary() {
     const archives = (content as typeof en).archives;
 
     const seededBooks: Book[] = archives.items.map((item, index) => ({
-        ...item,
+        title: item.title,
+        author: item.author,
+        year: item.year,
+        genre: item.genre,
+        dateDiscussed: item.dateDiscussed,
+        seriesLabel: item.seriesLabel,
+        notes: item.notes,
+        curator: "Curator",
         coverColor: COVER_PALETTE[index % COVER_PALETTE.length],
     }));
 
