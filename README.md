@@ -1,53 +1,46 @@
-# ☁️ Abdelilah IKBI - Cloud & DevOps Portfolio
+# LITERATUM
 
-![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=blue)
+> A Dark Academia Reading Club Template built with Next.js & Tailwind.
 
-> **"Engineering meets Humanity."** > A cinematic, bilingual, and interactive portfolio showcasing my journey as a Cloud & DevOps Engineering Student at INPT.
+**LITERATUM** frames your club as a quiet library: espresso backgrounds, parchment surfaces, Cinzel headings, and Cormorant Garamond body copy. It ships as a static site ready for GitHub Pages.
 
-## 🚀 Live Demo
+## Features
 
-**[View the Portfolio Live](https://abde14-ik.github.io/portfolio/)**
+- **Ex Libris** — A virtual bookshelf (Community Library) with curator tags and stacked shelves.
+- **The Inkwell** — Weekly writing prompts with a parchment input and local-only inscriptions.
+- **The Lexicon** — A thematic index of genres, traditions, and motifs.
+- **Prologue** — Club origin and rituals.
+- **Epilogue** — Contact form powered by EmailJS (optional).
 
----
+## Tech Stack
 
-## ✨ Key Features
+- Next.js 14 (App Router) · TypeScript · Tailwind CSS 4
+- Framer Motion · Lucide React
+- Static export (`output: "export"`) for GitHub Pages (basePath/assetPrefix set to `/gdi` by default).
 
-* **🎨 Royal Cloud Aesthetic:** A custom-designed dark mode theme ("Midnight & Gold") with cinematic typography and glassmorphism.
-* **🌍 Internationalization (i18n):** Full **English/French** toggle support using React Context and dynamic locale loading.
-* **⚡ Reactive & Interactive:**
-    * **Live Snapshot:** A "Bento Grid" dashboard showing my real-time focus, reading list, and training stats.
-    * **3D Library:** CSS-3D transforms for book covers that tilt on hover.
-    * **Magic Motion:** Smooth layout transitions using `framer-motion` (e.g., the Avatar expand effect).
-* **💬 Community Integrated:**
-    * **Giscus Guestbook:** A serverless comment system powered by GitHub Discussions.
-    * **EmailJS Contact Form:** Fully functional contact form without a backend server.
-* **🛠️ DevOps Best Practices:**
-    * CI/CD pipeline using **GitHub Actions** for automated deployment.
-    * Strict TypeScript typing and component modularity.
+## Getting Started
 
----
-
-## 🛠️ Tech Stack
-
-* **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
-* **Language:** TypeScript
-* **Styling:** Tailwind CSS
-* **Animations:** Framer Motion
-* **Icons:** Lucide React
-* **Fonts:** Playfair Display (Serif), Inter (Sans), Cairo (Arabic), Noto Sans Tifinagh.
-* **Integrations:** EmailJS (Forms), Giscus (Comments).
-* **Hosting:** GitHub Pages via GitHub Actions.
-
----
-
-## 🏃‍♂️ Getting Started
-
-To run this project locally, follow these steps:
-
-### 1. Clone the repository
 ```bash
-git clone [https://github.com/abde14-ik/portfolio.git](https://github.com/abde14-ik/portfolio.git)
-cd portfolio
+npm install
+npm run dev
+# visit http://localhost:3000/gdi
+```
+
+## Production / GitHub Pages
+
+```bash
+npm run build    # emits static site to ./out
+```
+
+Deploy with the included GitHub Actions workflow. If your repo name is not `gdi`, update `basePath` and `assetPrefix` in `next.config.ts` to match your repo slug.
+
+## Customize Content
+
+Edit the locale files:
+- `src/locales/en.ts`
+- `src/locales/fr.ts`
+
+Sections to update:
+- `hero`, `aboutClub`, `inkwell`, `archives` / `library`, `lexicon`, `contact`
+
+Swap book covers and textures in `public/` with your own assets.
