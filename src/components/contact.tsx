@@ -60,7 +60,7 @@ export function ContactSection() {
                 <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-slate-100">
                     Epilogue
                 </h2>
-                <p className="text-sm text-slate-400 sm:text-base">
+                <p className="text-sm text-[#C5A059] sm:text-base">
                     {content.contact.subheading}
                 </p>
             </header>
