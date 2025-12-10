@@ -26,7 +26,7 @@ export function AboutSection() {
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
             <header className="mb-12 mt-[1cm] space-y-3">
-                <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-slate-100">
+                <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-parchment">
                     {about.heading}
                 </h2>
                 <p className="text-sm text-[#C5A059] sm:text-base">
@@ -36,7 +36,7 @@ export function AboutSection() {
 
             <div className="grid gap-5 md:grid-cols-2 md:gap-6">
                 <div className="rounded-2xl border border-leather/70 bg-espresso/80 p-5 shadow-sm shadow-black/60">
-                    <h3 className="text-sm font-semibold text-slate-100 sm:text-base">
+                    <h3 className="text-sm font-semibold text-parchment sm:text-base">
                         {about.engineeringTitle}
                     </h3>
                     <div className="mt-3 space-y-2 text-sm text-[#C5A059] sm:text-[0.94rem]">
@@ -47,7 +47,7 @@ export function AboutSection() {
                 </div>
 
                 <div className="rounded-2xl border border-leather/70 bg-espresso/80 p-5 shadow-sm shadow-black/60">
-                    <h3 className="text-sm font-semibold text-slate-100 sm:text-base">
+                    <h3 className="text-sm font-semibold text-parchment sm:text-base">
                         {about.beyondCodeTitle}
                     </h3>
                     <div className="mt-3 space-y-2 text-sm text-[#C5A059] sm:text-[0.94rem]">

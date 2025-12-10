@@ -60,16 +60,16 @@ export function HeroSection() {
                         </div>
 
                         {/* Header */}
-                        <p className="font-mono text-[0.7rem] tracking-[0.32em] text-red-900/40 uppercase">
+                        <p className="font-mono text-[0.7rem] tracking-[0.32em] text-[#C5A059] uppercase">
                             Official Record
                         </p>
-                        <p className="mt-1 text-[0.65rem] font-mono uppercase tracking-[0.28em] text-amber-900/60">
+                        <p className="mt-1 text-[0.65rem] font-mono uppercase tracking-[0.28em] text-[#C5A059]">
                             Literatum Reading Ledger
                         </p>
 
                         <div className="mt-4 space-y-4 text-xs">
                             <div>
-                                <p className="font-mono text-[0.65rem] uppercase tracking-[0.26em] text-slate-500">
+                                <p className="font-mono text-[0.65rem] uppercase tracking-[0.26em] text-[#C5A059]">
                                     Current Volume
                                 </p>
                                 <p className="mt-1 text-xl sm:text-2xl text-espresso font-serif italic leading-snug">
@@ -87,7 +87,7 @@ export function HeroSection() {
 
                             <div className="pt-3 border-t border-espresso/15 grid grid-cols-2 gap-4">
                                 <div>
-                                    <p className="font-mono text-[0.65rem] uppercase tracking-[0.26em] text-slate-500">
+                                    <p className="font-mono text-[0.65rem] uppercase tracking-[0.26em] text-[#C5A059]">
                                         Theme
                                     </p>
                                     <p className="mt-1 text-[0.8rem] text-espresso/80">
@@ -95,7 +95,7 @@ export function HeroSection() {
                                     </p>
                                 </div>
                                 <div>
-                                    <p className="font-mono text-[0.65rem] uppercase tracking-[0.26em] text-slate-500">
+                                    <p className="font-mono text-[0.65rem] uppercase tracking-[0.26em] text-[#C5A059]">
                                         Status
                                     </p>
                                     <p className="mt-1 text-[0.8rem] text-espresso/80">
@@ -105,7 +105,7 @@ export function HeroSection() {
                             </div>
 
                             <div className="pt-3 border-t border-dashed border-espresso/20">
-                                <p className="font-mono text-[0.65rem] uppercase tracking-[0.26em] text-slate-500">
+                                <p className="font-mono text-[0.65rem] uppercase tracking-[0.26em] text-[#C5A059]">
                                     Notes
                                 </p>
                                 <p className="mt-1 text-[0.8rem] text-espresso/80">
