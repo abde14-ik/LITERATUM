@@ -57,10 +57,10 @@ export function ContactSection() {
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
             <header className="mb-12 space-y-3">
-                <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-slate-100">
+                <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-[#D6C6B0]">
                     Epilogue
                 </h2>
-                <p className="text-sm text-[#C5A059] sm:text-base">
+                <p className="text-sm text-parchment/70 sm:text-base">
                     {content.contact.subheading}
                 </p>
             </header>

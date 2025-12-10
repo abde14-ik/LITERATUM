@@ -29,7 +29,7 @@ export function AboutSection() {
                 <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-parchment">
                     {about.heading}
                 </h2>
-                <p className="text-sm text-[#C5A059] sm:text-base">
+                <p className="text-sm text-parchment/70 sm:text-base">
                     {about.subheading}
                 </p>
             </header>
@@ -39,7 +39,7 @@ export function AboutSection() {
                     <h3 className="text-sm font-semibold text-parchment sm:text-base">
                         {about.engineeringTitle}
                     </h3>
-                    <div className="mt-3 space-y-2 text-sm text-[#C5A059] sm:text-[0.94rem]">
+                    <div className="mt-3 space-y-2 text-sm text-parchment/70 sm:text-[0.94rem]">
                         {about.profileItems.map((item: string) => (
                             <p key={item}>{item}</p>
                         ))}
@@ -50,7 +50,7 @@ export function AboutSection() {
                     <h3 className="text-sm font-semibold text-parchment sm:text-base">
                         {about.beyondCodeTitle}
                     </h3>
-                    <div className="mt-3 space-y-2 text-sm text-[#C5A059] sm:text-[0.94rem]">
+                    <div className="mt-3 space-y-2 text-sm text-parchment/70 sm:text-[0.94rem]">
                         {about.beyondItems.map((item: string) => (
                             <p key={item}>{item}</p>
                         ))}
