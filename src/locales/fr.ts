@@ -299,8 +299,7 @@ export const fr = {
     inkwell: {
         heading: "The Inkwell",
         subheading: "Invite d'écriture hebdomadaire",
-        prompt:
-            "Dans <em>L'Étranger</em>, Camus utilise le soleil comme force hostile. Décrivez un décor qui reflète le conflit intérieur d'un personnage.",
+        prompt: "Ici, vous pouvez publier des citations ou vos propres pensées, restez créatifs :)",
         placeholder: "Commencez votre réflexion ici...",
         note: "Cet espace est local : rien n'est envoyé. Considérez-le comme une marge privée.",
     },

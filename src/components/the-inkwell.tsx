@@ -18,17 +18,10 @@ export function TheInkwell() {
 
     const [entries, setEntries] = useState<Entry[]>([
         {
-            id: "1",
-            author: "Elias V.",
-            text: "The sun in Camus represents the indifference of the universe...",
-            date: "Dec 06, 2025, 21:00",
-            isUser: false,
-        },
-        {
-            id: "2",
-            author: "Sophia M.",
-            text: "Meursault is not a villain, but a mirror.",
-            date: "Dec 03, 2025, 18:30",
+            id: "0",
+            author: "System",
+            text: "Welcome to the Inkwell. The margins are yours.",
+            date: "Now",
             isUser: false,
         },
     ]);
@@ -37,6 +30,7 @@ export function TheInkwell() {
     const [authorName, setAuthorName] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [showArchive, setShowArchive] = useState(false);
+    const [selectedEntry, setSelectedEntry] = useState<Entry | null>(null);
 
     if (!inkwell) {
         return null;
@@ -120,7 +114,10 @@ export function TheInkwell() {
                             </div>
 
                             {latestEntry && (
-                                <div className="mt-2 rounded-2xl border border-parchment/35 bg-espresso/70 px-4 py-4 shadow-inner shadow-black/40">
+                                <div
+                                    className="mt-2 rounded-2xl border border-parchment/35 bg-espresso/70 px-4 py-4 shadow-inner shadow-black/40 cursor-pointer hover:opacity-80 transition-opacity"
+                                    onClick={() => setSelectedEntry(latestEntry)}
+                                >
                                     <p className="text-[0.65rem] font-mono uppercase tracking-[0.22em] text-gold/80">
                                         Latest inscription
                                     </p>
@@ -154,7 +151,8 @@ export function TheInkwell() {
                                     {archiveEntries.map((entry) => (
                                         <article
                                             key={entry.id}
-                                            className="rounded-2xl border border-parchment/25 bg-espresso/80 px-4 py-3 shadow-inner shadow-black/40"
+                                            className="rounded-2xl border border-parchment/25 bg-espresso/80 px-4 py-3 shadow-inner shadow-black/40 cursor-pointer hover:opacity-80 transition-opacity"
+                                            onClick={() => setSelectedEntry(entry)}
                                         >
                                             <div className="flex items-baseline justify-between gap-3">
                                                 <p className="font-serif text-sm font-semibold text-gold">
@@ -238,6 +236,36 @@ export function TheInkwell() {
                     </div>
                 </div>
             </div>
+
+            {selectedEntry && (
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+                    onClick={() => setSelectedEntry(null)}
+                >
+                    <article
+                        className="relative w-full max-w-2xl border border-[#C5A059] bg-[#F2E8C9] p-8 text-[#231709] shadow-2xl"
+                        onClick={(event) => event.stopPropagation()}
+                    >
+                        <button
+                            type="button"
+                            className="absolute right-4 top-4 text-xs font-[var(--font-fira-code)] uppercase tracking-[0.2em] text-[#5c4a36] hover:text-[#231709] transition-colors"
+                            onClick={() => setSelectedEntry(null)}
+                        >
+                            Close
+                        </button>
+
+                        <h3 className="font-[var(--font-heading)] text-2xl sm:text-3xl tracking-tight">
+                            {selectedEntry.author}
+                        </h3>
+                        <p className="mt-1 font-[var(--font-fira-code)] text-xs uppercase tracking-[0.2em] text-[#5c4a36]">
+                            {selectedEntry.date}
+                        </p>
+                        <p className="mt-4 font-[var(--font-body)] text-xl sm:text-2xl leading-relaxed">
+                            {selectedEntry.text}
+                        </p>
+                    </article>
+                </div>
+            )}
         </section>
     );
 }

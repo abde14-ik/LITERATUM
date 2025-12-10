@@ -302,8 +302,7 @@ export const en = {
     inkwell: {
         heading: "The Inkwell",
         subheading: "Weekly Writing Prompt",
-        prompt:
-            "In <em>The Stranger</em>, Camus uses the sun as a hostile force. Write a paragraph describing a setting that reflects a character's internal conflict.",
+        prompt: "Here you can publish quotes or your own thoughts, stay creative :)",
         placeholder: "Begin your reflection here...",
         note: "This space is purely local – nothing you write is sent anywhere. Treat it as a private margin note.",
     },
