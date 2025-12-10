@@ -11,6 +11,7 @@ const heroVariants = {
 export function HeroSection() {
     const { content } = useLanguage();
     const hero = content.hero;
+    const ledger = hero.ledger;
 
     return (
         <motion.section
@@ -52,35 +53,28 @@ export function HeroSection() {
                 {/* Right column: Vintage library checkout card */}
                 <div className="mt-8 xl:mt-0 md:pl-6 lg:pl-10">
                     <div className="relative max-w-xs sm:max-w-sm -rotate-1 rounded-lg bg-[#F2E8C9] px-5 py-5 sm:px-6 sm:py-6 text-[#1a1a1a] shadow-lg shadow-black/40">
-                        {/* Stamp */}
-                        <div className="pointer-events-none absolute right-4 top-8 -rotate-12">
-                            <div className="border border-red-900/40 px-3 py-1 text-[0.65rem] font-mono uppercase tracking-[0.25em] text-red-900/60 mix-blend-multiply">
-                                In Progress
-                            </div>
-                        </div>
-
                         {/* Header */}
                         <p className="font-mono text-[0.7rem] tracking-[0.32em] text-[#C5A059] uppercase">
-                            Official Record
+                            {ledger?.header ?? "Library Card"}
                         </p>
                         <p className="mt-1 text-[0.65rem] font-mono uppercase tracking-[0.28em] text-[#C5A059]">
-                            Literatum Reading Ledger
+                            {ledger?.title ?? "CLUB LEDGER"}
                         </p>
 
                         <div className="mt-4 space-y-4 text-xs">
                             <div>
                                 <p className="font-mono text-[0.65rem] uppercase tracking-[0.26em] text-[#C5A059]">
-                                    Current Volume
+                                    {ledger?.currentLabel ?? "Current Season"}
                                 </p>
                                 <p className="mt-1 text-xl sm:text-2xl text-espresso font-serif italic leading-snug">
-                                    {hero.statusBookValue}
+                                    {ledger?.bookTitle}
                                 </p>
-                                <p className="text-sm font-mono uppercase tracking-[0.16em] text-espresso/80">
-                                    {hero.statusBookAuthor}
+                                <p className="text-xs font-serif uppercase tracking-[0.2em] text-espresso/80">
+                                    {ledger?.bookAuthor}
                                 </p>
-                                {hero.statusBookSubtitle && (
+                                {ledger?.subTitle && (
                                     <p className="mt-1 text-[0.75rem] text-espresso/70">
-                                        {hero.statusBookSubtitle}
+                                        {ledger.subTitle}
                                     </p>
                                 )}
                             </div>
@@ -88,28 +82,28 @@ export function HeroSection() {
                             <div className="pt-3 border-t border-espresso/15 grid grid-cols-2 gap-4">
                                 <div>
                                     <p className="font-mono text-[0.65rem] uppercase tracking-[0.26em] text-[#C5A059]">
-                                        Theme
+                                        {ledger?.themeLabel ?? "Focus"}
                                     </p>
                                     <p className="mt-1 text-[0.8rem] text-espresso/80">
-                                        {hero.snapshotStacksValue}
+                                        {ledger?.themeList}
                                     </p>
                                 </div>
                                 <div>
                                     <p className="font-mono text-[0.65rem] uppercase tracking-[0.26em] text-[#C5A059]">
-                                        Status
+                                        {ledger?.statusLabel ?? "Gathering"}
                                     </p>
                                     <p className="mt-1 text-[0.8rem] text-espresso/80">
-                                        {hero.statusRunValue}
+                                        {ledger?.statusValue}
                                     </p>
                                 </div>
                             </div>
 
                             <div className="pt-3 border-t border-dashed border-espresso/20">
                                 <p className="font-mono text-[0.65rem] uppercase tracking-[0.26em] text-[#C5A059]">
-                                    Notes
+                                    {ledger?.notesLabel ?? "Curator's Note"}
                                 </p>
                                 <p className="mt-1 text-[0.8rem] text-espresso/80">
-                                    {hero.statusRunSubtitle}
+                                    {ledger?.notesValue}
                                 </p>
                             </div>
                         </div>
