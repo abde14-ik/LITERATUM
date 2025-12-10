@@ -62,7 +62,7 @@ export const fr = {
         statusFocusValue: "Littérature & salles silencieuses",
         statusReadingLabel: "Lecture",
         statusTrainingLabel: "Pratique",
-        establishedLine: "Fondé en MMXXIV à l'INPT.",
+        establishedLine: "Fondé en MMXXV dans l'enceinte de l'INPT.",
         status: {
             focusSub: "Soins du texte",
             professionalLabel: "Focus collectif",

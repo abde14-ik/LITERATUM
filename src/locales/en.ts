@@ -62,7 +62,7 @@ export const en = {
         statusFocusValue: "Literature & quiet rooms",
         statusReadingLabel: "Reading",
         statusTrainingLabel: "Training",
-        establishedLine: "Established MMXXIV at the National Institute of Posts and Telecommunications.",
+        establishedLine: "Founded MMXXV within the walls of INPT.",
         status: {
             focusSub: "Infrastructure as Code & Automation",
             professionalLabel: "Professional Focus",
